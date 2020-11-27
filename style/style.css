@@ -36,10 +36,18 @@
   margin-top: 2rem;
   font-size: 3em;
 }
-.imAdminLink{
-  bottom:2rem;
-  right: 1rem;
-  position:fixed;
+.ink{
+  text-decoration: none;
+  
+  position: fixed;
+	bottom: 0.1rem;
+	right: 0.2rem;
+  opacity: 0;
+}
+.ink:hover{
+  opacity: 0.3;
+  color:#F7F2B1;
+  
 }
                                   /*NAV BAR (nav_bar.php)*/
 .body{

@@ -18,7 +18,7 @@ include('nav_bar.php');
 
 
 <script src='./js/appIndex.js'></script>
-<div class='imAdminLink'><a class="dropdown-item" href="admin.php">Je suis admin</a></div>
+<a class='ink' title="Administrateur" href="admin.php">Je suis admin</a>
 <?php
 include('closenav.php');
 ?>

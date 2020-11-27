@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+.pres{
+  color:#f7e87b;
+}
+.containerPres{
+  display: flex;
+  content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /*color: white;*/
+  font-weight: bold;
+  border: 2px solid #F7F2B1;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+.hour{
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  color:#f7e87b;
+  text-align:center;
+  margin-top: 2rem;
+  font-size: 3em;
+}
+.imAdminLink{
+  bottom:2rem;
+  right: 1rem;
+  position:fixed;
+}
+                                  /*NAV BAR (nav_bar.php)*/
+.body{
+  background-image: url('../img/bg.jpg');
+}
+.navbar .navbar-brand{
+  color: #F7F2B1;
+  font-size: 2em;
+}
+.icon {
+  font-size: 45px;
+  letter-spacing: 2px;
+  color:#F7F2B1;
+  }
+.dropdown .btn{
+  color: #F7F2B1 ;
+  content: none;
+}
+.dropdown :focus{
+  color: #F7F2B1;
+  content: none;
+  border-color: #F7F2B1;
+}
+.dropdown-toggle::after {
+  content: none;
+}
+.dropdown-menu{ 
+  background-color: transparent;
+  border:0.5px solid #F7F2B1;
+  
+}
+.dropdown .dropdown-item {
+  background-color: transparent;
+  font-size: 2em ;
+  color:#F7F2B1 ;
+
+}
+.dropdown .dropdown:active{
+  
+  border-color:#302C01;
+
+}
+.dropdown .btn:active{
+  border: 0px;
+
+}
+ :hover{
+  border-color: #302C01;
+}
+.dropdown-item:hover{
+  background-color: #f7e87b;
+  color: #302C01;
+}
+
+                              /*NAV BAR (nav_bar.php)*/
+/*---------------------------------------------------------------------------------------------*/                              
+
+                              /*FORM*/
+         
+
+.container{
+  display: flex;
+  content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /*color: white;*/
+  font-weight: bold;
+  border: 2px solid #F7F2B1;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  margin-top: 8em;
+  overflow: hidden;
+  
+}
+.container form{
+  content: center;
+  align-items: center; 
+  text-align: center;
+}
+
+.form-group input{
+  width: 700px;
+  background-color: #f7e87b;
+}
+.title{
+  color: #F7F2B1;
+  font-size: 2em;
+  text-align: center;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  font-weight: bold;
+  border: 2px solid #F7F2B1;
+  border-radius: 10px;
+  width: 40%;
+}
+.content{
+  margin: 4em;
+  display: flex;
+  justify-content: center;
+  content: center;
+  text-align: center;
+}
+.container .btn{
+  color: #F7F2B1;
+  border-color: #F7F2B1;
+
+}
+
+                              /*FORM*/
+
+/*---------------------------------------------------------------------------------------------*/    
+
+                              /*NAV BAR (nav_bar2.php)*/
+
+.bodyy{
+  background-color: #260b23;
+}
+
+                              /*NAV BAR (nav_bar2.php)*/
+
+
+
+/*---------------------------------------------------------------------------------------------*/     
+
+                              /*carousel (espacemembre.php)*/
+
+.card{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  margin-top: 5em;
+}
+.carousel .fas{
+  color:#3815d4;
+}
+.bag .btn{
+  font-size: 45px;
+  letter-spacing: 2px;
+  color:#F7F2B1;
+}
+
+                              /*carousel (espacemembre.php)*/
+
+/*---------------------------------------------------------------------------------------------*/  
+
+                              /* (espaceadmin.php)*/
+section{
+	background-position: center;
+	text-align: center;
+	margin-bottom: 0.6rem;
+  height:auto;
+
+}
+.CA{
+  display: flex;
+  flex-direction: column;
+}
+.container2{
+  margin-left: 6em;
+  margin-right: 6em;
+  display: flex;
+  justify-content: center;
+  content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /*color: white;*/
+  font-weight: bold;
+  border: 2px solid #F7F2B1;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+ 
+
+}
+.container2 .btn{
+  color: #F7F2B1;
+  border-color: #F7F2B1;
+
+}
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------*/    
+
+                              /*NAV BAR (nav_bar3.php)*/
+.bodyy .dropdown-menu{ 
+  background-color: transparent;
+  border:0.5px solid #F7F2B1;
+  
+}
+.bodyy .dropdown .dropdown-item {
+  background-color: transparent;
+  font-size: 1em ;
+  color:#F7F2B1 ;
+
+}
+.bodyy .dropdown-item:hover{
+  background-color: #F7F2B1;
+  color: #302C01;
+}
+
+                                /*NAV BAR (nav_bar3.php)*/
+                              
+                              
+                              
+/*---------------------------------------------------------------------------------------------*/     
+
+                                /*espace admin (espaceadmin.php)*/
+                              
+.containerr{
+  display: flex;
+  flex-direction: column;
+  margin-left: 4em;
+  margin-right: 4em;
+  margin-top: 4em;
+}
+table{
+  background-color:lightgray;
+  
+}
+tr td{
+  padding: 1em;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4em;
+ 
+}
+.tdbutton{
+ text-align:right;
+}
+.container3{
+  margin-left: 6em;
+  margin-right: 6em;
+  display: flex;
+  justify-content: center;
+  content: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /*color: white;*/
+  font-weight: bold;
+  border: 2px solid #F7F2B1;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+#upPage{
+	background-color:#260b23;
+	color: #F7F2B1;
+	padding: 0.5rem;
+	border-radius: 3rem; 
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+  opacity: 0.3;
+
+  scroll-behavior: smooth;
+
+}
+#upPage:hover{
+	opacity: 1;
+}
+
+
+
+                                /*espace admin (espaceadmin.php)*/
+
+/*---------------------------------------------------------------------------------------------*/  
+
+                 /*espace membre (espacemembre.php)*/
+.post-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,320px);
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.thumbnail{
+  display:block;
+  width:100%;
+  height:180%;
+  object-fit: cover;
+}
+
+.post-preview{
+  background-color:#fff;
+  padding:15px;
+}
+.post-tittle{
+  color: black;
+}
+.post-intro{
+  color: #4b5156;
+  font-size:14px;
+}

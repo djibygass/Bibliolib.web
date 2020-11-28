@@ -1,16 +1,14 @@
 <?php
 session_start();
-include ('connectbdd.php');
-
+require_once "../modeles/Users.php";
+$user = new Users();
 if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['motdepasse']) && !empty($_POST['motdepasse'])){
   
   $login = $_POST['login'];
   $password = $_POST['motdepasse'];
 
-  $req = " SELECT * FROM clients WHERE login =?";
-  $stmt = getBdd() -> prepare($req);
-  $stmt ->execute([$login]);
-  $data = $stmt->fetch();
+ 
+  $data = $user->checkThisUser($login);
     if(password_verify($password,$data['mdp'])){
       $_SESSION["login"] = $login;
       $_SESSION['idClient'] = $data['id_clients'];

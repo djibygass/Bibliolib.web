@@ -1,5 +1,4 @@
 <?php
-
 require_once "Modele.php";
 
 Class Customers extends Modele{

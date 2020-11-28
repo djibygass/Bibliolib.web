@@ -14,7 +14,7 @@ include('nav_bar.php');
         Login ou Mot de Passe incorrect !!
         </div>
      <?php
-     unset($_GET);
+     
      }
      ?>
       <form method='POST' action='traitements/connexion.php'>

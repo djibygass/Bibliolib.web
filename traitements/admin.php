@@ -1,16 +1,15 @@
 <?php
 session_start();
-include ('connectbdd.php');
+require_once "../modeles/Admins.php";
+$admin = new Admins();
 
 if (isset($_POST['motdepasse']) && !empty($_POST['motdepasse']) && isset($_POST['login']) && !empty($_POST['login'])){
   
   $password = $_POST['motdepasse'];
   $login = $_POST['login'];
 
-  $req = "SELECT * FROM admin WHERE login = ?";
-  $stmt = getBdd()-> prepare($req);
-  $stmt ->execute([$login]);
-  $data = $stmt->fetch();
+  
+  $data = $admin->checkThisAdmin($login);
 
     if(password_verify($password, $data['mdp'])){
       $_SESSION["motdepasse"] = $password;

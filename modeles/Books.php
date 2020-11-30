@@ -36,6 +36,7 @@ class Books extends Modele{
 
   }
  public function returnABook(int $idBook){
+   //supp l'user aussi
   $sql ='DELETE FROM emprunter where id_livres = ?';
   $this->executeRequest($sql,[$idBook]);
 

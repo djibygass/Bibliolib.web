@@ -38,10 +38,10 @@ function getMessage(){
   if (hour<14 && hour>5){
     var txt ='Bonjour,'
   }
-  else if (hour>14 && hour<18){
-    var txt='Bon Après midi,'
+  else if (hour<18 && hour>14){
+    var txt='Bon après-midi,'
   }
-  else{
+  else if(hour>18 && hour<5){
     var txt ='Bonsoir,'
   }
   message.innerHTML= txt+" Bienvenue sur notre site de bibliothèque en ligne.<br> Veuillez cliquez sur l'icon d'en haut à droite pour continuer l'aventure. "

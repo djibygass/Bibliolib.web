@@ -18,7 +18,17 @@ if(isset($_GET['id'])){
 $AllBooks=$books->retrieveAllBooks();
 ?>
 
-
+<div id="search-panel">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-down"></i></span>
+        </div>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+</div>
 
 
 <div class="post-wrapper">

@@ -4,34 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="./style/style.css">
   <title> BiblioB</title>
   <link rel="shortcut icon" type="image/x-icon" href="img/book-open-solid.svg">
-  	<!-- fontawsome's link -->
-	<script src="https://kit.fontawesome.com/d57bd52145.js" crossorigin="anonymous"></script>
-	<!-- /fontawsome's link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body class ='body'>
-<nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
-  <a class="navbar-brand" href="index.php">BiblioB</a>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <span class="nav justify-content-end">
-    </span>
-  </div>
 
-  <div class="dropdown">
-  <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <span class = 'icon'><i class="far fa-user"></i><i class="fas fa-sort-down"></i></span>
-  </button>
-  <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="inscription.php">Inscription</a>
-      <a class="dropdown-item" href="connexion.php">Connexion</a>
-      
+  <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
+    <a class="navbar-brand" href="index.php">BiblioB</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <span class="nav justify-content-end">
+      </span>
     </div>
-</div>
-</nav>
+
+
+
+    <a href="contact.php" >
+      <button class="btn btn-transparent" type="button"  aria-haspopup="true" aria-expanded="false">
+        contact-form
+      </button>
+    </a>
+    
+
+    <div class="dropdown">
+      <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Bibliothèque
+      </button>
+      <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
+        <!-- give it a id to present the city in a h2-->
+          <a class="dropdown-item" href="connexion.php">Paris</a>
+          <a class="dropdown-item" href="connexion.php">Lyon</a>
+          <a class="dropdown-item" href="connexion.php">toulouse</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+    <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Librairie
+    </button>
+    </div>
+  </nav>
 
 
 

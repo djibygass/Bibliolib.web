@@ -31,6 +31,12 @@ include('nav_bar.php');
     </div>
   </div>
 </section>
+
+
+
+
+
+
 <?php
 include('closenav.php');
 ?>

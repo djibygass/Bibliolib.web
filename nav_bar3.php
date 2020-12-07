@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="style/style.css">
   <title>BiblioB</title>
-  <link rel="shortcut icon" type="image/x-icon" href="img/book-open-solid.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="img/bs.svg">
   	<!-- fontawsome's link -->
 	<script src="https://kit.fontawesome.com/d57bd52145.js" crossorigin="anonymous"></script>
 	<!-- /fontawsome's link -->

@@ -4,7 +4,7 @@
 - used for database connection and SQL request execution
 */
 abstract class Modele{
-  //accessible without needing instantiation -> static
+  //accessible without instantiation -> static
   static $db;
   
   //return the conection object

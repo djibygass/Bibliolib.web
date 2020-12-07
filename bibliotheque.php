@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('nav_bar2.php');
-if(!$_SESSION['login']){
-    header('location:connexion.php');
-}else{
+include('nav_bar1.php');
+// if(!$_SESSION['login']){
+//     header('location:connexion.php');
+// }else{
     require_once("modeles/Books.php");
     $books = new Books();
-}
+//}
 
 if(isset($_GET['id'])){
     $idClients = $_SESSION['idClient'];
@@ -18,14 +18,16 @@ if(isset($_GET['id'])){
 $AllBooks=$books->retrieveAllBooks();
 ?>
 
-<div id="search-panel">
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-chevron-circle-down"></i></span>
-        </div>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-        <div class="input-group-append">
-            <span class="input-group-text"><i class="fas fa-search"></i></span>
+<div class="search-panel-wrapper">
+    <div class="search-panel">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-chevron-circle-down"></i></span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+            </div>
         </div>
     </div>
 </div>
@@ -43,7 +45,7 @@ $AllBooks=$books->retrieveAllBooks();
                 <h6 class="post-tittle"><?=$data["titre"]?></h6>
                 <p class="post-intro"><?=$data["description"]?> </p>
                 <div>quantités restantes : <?=$data["quantite"]?></div>
-                <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent dropdown-toggle">Emprunter</button></a>
+                <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent ">Emprunter</button></a>
                 </div>
             </div>
         </div>

@@ -10,16 +10,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/bs.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
-<body class ='body'>
-
-  <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
+<body class='body'>
+<nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
     
     <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
 
     <ul class='nav-links'>
      <li>
         <a href="contact.php" class="btn">      
-            <span>Contact</span>
+            <span>contact-form</span>
         </a>
       </li>
       <li>
@@ -28,14 +27,15 @@
         </a>
       </li>
       <li>
-        <a href="contact.php" class="btn">
+        <a href="librairie.php" class="btn">
           Librairie
         </a>
       </li>
       <li>
-        <a href="connexion.php" class="btn">
+        <a href="connexion.php" class="btn" id="dropdownMenu">
         <i class="fas fa-user-alt"></i>
         </a>
+        
       </li>
     </ul>
     <div class='burger'>

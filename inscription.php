@@ -2,11 +2,12 @@
 include('nav_bar.php');
 ?>
 <section>
-  <div class='content'>
-  <h2 class='title'>INSCRIPTION</h2>
-  </div>
   <div class='container'>
-   <div>
+   <div class="c-wrapper">
+      <div class="icon-c-wrapper"><img src="./img/logo.png" alt="logo">
+    </div>
+   <div class='form-c-wrapper' >
+    <i class="fas fa-user-plus"></i>
    <?php
         if (isset($_GET['ERREUR1'])){
        ?>

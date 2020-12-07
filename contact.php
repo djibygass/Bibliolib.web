@@ -2,41 +2,34 @@
 include 'nav_bar.php';
 
 ?>
-<div id="container">
-  <h1>&bull; Keep in Touch &bull;</h1>
-  <div class="underline">
+<div class="container">
+ <div class="c-wrapper">
+    <div class="icon-c-wrapper">
+    <i class="fas fa-envelope-open"></i>
+    <p class='text'>@support</p>
+    </div>
+
+    <div class='form-c-wrapper'>
+    <form method='POST' action='#'>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Prénom" name='login'>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nom" name='Login'>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email" name='login'>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Sujet" name='login'>
+          </div>
+          <div class="form-group">
+           <textarea class="form-control"        id="exampleFormControlTextarea1" placeholder="Message" rows="4"></textarea>
+          </div>
+          <div>
+          <button type="submit" class="btn btn-transparent">Envoyer</button>
+          </div>
+        </form>
+    </div>
   </div>
-  <div class="icon_wrapper">
-  <i class="fas fa-book"></i>
-  </div>
-  <form action="#" method="post" id="contact_form">
-    <div class="name">
-      <label for="name"></label>
-      <input type="text" placeholder="My name is" name="name" id="name_input" required>
-    </div>
-    <div class="email">
-      <label for="email"></label>
-      <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
-    </div>
-    <div class="telephone">
-      <label for="name"></label>
-      <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
-    </div>
-    <div class="subject">
-      <label for="subject"></label>
-      <select placeholder="Subject line" name="subject" id="subject_input" required>
-        <option disabled hidden selected>Subject line</option>
-        <option>I'd like to start a project</option>
-        <option>I'd like to ask a question</option>
-        <option>I'd like to make a proposal</option>
-      </select>
-    </div>
-    <div class="message">
-      <label for="message"></label>
-      <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
-    </div>
-    <div class="submit">
-      <input type="submit" value="Send Message" id="form_button" />
-    </div>
-  </form><!-- // End form -->
 </div><!-- // End #container -->

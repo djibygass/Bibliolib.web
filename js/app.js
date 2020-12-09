@@ -1,14 +1,3 @@
-//procedural
-
-
-
-//selectors
-const hourDiv = document.querySelector('.hour')
-const message = document.querySelector('.pres') 
-
-
-//events
-
 //functions
 function getDateTime(){
 
@@ -27,7 +16,7 @@ function getDateTime(){
     if (seconds<10){
       var seconds = '0' + seconds
     }
-    hourDiv.innerHTML = hours+':'+minutes+':'+seconds
+    document.querySelector('.hour').innerHTML = hours+':'+minutes+':'+seconds
     
   },1000)
 
@@ -35,7 +24,7 @@ function getDateTime(){
 function getMessage(){
   var theDate = new Date
   var hour = theDate.getHours()
-  if (hour<14 && hour>5){
+  if (hour<=14 && hour>5){
     var txt ='Bonjour,'
   }
   else if (hour<18 && hour>14){
@@ -44,16 +33,15 @@ function getMessage(){
   else if(hour>18 || hour<5){
     var txt ='Bonsoir,'
   }
-  message.innerHTML= txt+" Bienvenue sur le site officiel de BiblioliB.<br>  "
+  document.querySelector('.pres').innerHTML= txt+' Bienvenue sur le site officiel de BiblioliB.<br>'
 }
 
 
 
+  //call functions
+  
+  getMessage();
+  getDateTime();
+ 
 
 
-
-
-
-//call functions
-getMessage()
-getDateTime()

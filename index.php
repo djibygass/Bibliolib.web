@@ -51,6 +51,7 @@ include('nav_bar.php');
 
 
 <a class='linkbotright' title="Administrateur" href="admin.php">Je suis admin</a>
+<script src='./js/app.js'></script>
 <?php
 include('closenav.php');
 ?>

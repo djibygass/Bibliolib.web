@@ -12,7 +12,7 @@ if (isset($_POST['login']) && !empty($_POST['login']) && isset($_POST['motdepass
     if(password_verify($password,$data['mdp'])){
       $_SESSION["login"] = $login;
       $_SESSION['idClient'] = $data['id_clients'];
-      header('location:../bibliotheque.php');
+      header('location:../espacemembre.php');
     }
     else{
       header("location:../connexion.php?Erreur=TRUE");

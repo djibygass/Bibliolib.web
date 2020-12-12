@@ -51,6 +51,17 @@
     overflow-x: hidden;
     display: block;
   }
+  .bodyM{
+   
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-color: #413f52;
+    background-size: cover;
+
+    overflow-x: hidden;
+    display: block;
+  }
 
   .flex{
     display: flex;
@@ -166,11 +177,8 @@
     display: none;
     cursor: pointer;
   }
-  .burger div{ 
-    width: 25px;
-    height:3px;
-    background-color:var(--primaryColor);
-    margin:5px;
+  .fas.fa-bars{ 
+ color: var(--primaryColor);
   }
   .btn.btn-transparent{
     border:1px solid var(--primaryColor);
@@ -265,12 +273,13 @@
       font-size:4em;
       padding-bottom:0.5em;
     }
-    .form-c-wrappe .link{
+    span.link{
       text-decoration: none;
       color:var(--primaryColor);
     }
-    .form-c-wrappe .link:hover{
+    span.link:hover{
       color:#f552;
+      
     }
   /* incription.php */
     .fas.fa-user-plus{
@@ -278,19 +287,65 @@
       font-size:4em;
       padding-bottom:0.5em;
     }
+    /* espacemembre.php */
+    .es-wrapper{
+      height: 100%;
+      width: 100%;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      grid-template-areas:
+      'es-wrapper-l es-wrapper-r' ;
+      padding-top: 1em;
+      justify-content: space-between;
+    }
+    .es-wrapper-l{
+      grid-area: es-wrapper-l;
+      display: grid;
+      align-content: center;
+      padding-top: 15px;
+      margin:1em;
+      
+    
+     
+    }
+    .es-wrapper-r{
+      grid-area: es-wrapper-r;
+      display: grid;
+      align-content: center;
+      padding-top: 15px;
+      margin:1em;
+      background-color: var(--primaryColor);
+    }
+  /* admin.php */
+  .fas.fa-tools{
+    color:var(--primaryColor);
+    font-size:4em;
+    padding-bottom:0.5em;
+  }
 
-
+  #upPage{
+    background-color:#260b23;
+    color: var(--primaryColor);
+    padding: 0.5rem;
+    border-radius: 3rem; 
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0.3;
+  
+    scroll-behavior: smooth;
+  
+  }
+  #upPage:hover{
+    opacity: 1;
+  }
 
 
 
 
 /* medias */
 
-  @media screen and (max-width: 1276px){
-    .nav-links{
-      width: 60%;
-    }
-  }
+
 
   @media screen and (max-width: 850px){
     body{
@@ -323,6 +378,18 @@
       'l-column''r-column';
       padding-top: 1em;
     }
+    .c-wrapper{
+      height: 100%;
+      width: 100%;
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-areas:
+      'icon-c-wrapper''form-c-wrapper' ;
+      padding-top: 1em;
+      justify-content: space-between;
+    }
+    .icon-c-wrapper{
+    display:none;}
     
   }
 

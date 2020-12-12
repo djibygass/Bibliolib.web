@@ -16,26 +16,32 @@
     <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
 
     <ul class='nav-links'>
-  
-    <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
-        <i class="fab fa-bootstrap"></i><span>ibliolib</span> 
+     <li>
+        <a href="#" class="btn">      
+            <span><i class="fas fa-suitcase"></i></span>
+        </a>
+      </li>
+     <li>
+         <a href="bibliotheque.php" class="btn">
+          Bibliothèque 
         </a>
       </li>
       <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
-        <i class="fas fa-comments"></i>
+        <a href="librairie.php" class="btn">
+          Librairie
         </a>
       </li>
       <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
+        <a href="traitement/deconnexion.php" class="btn"  title="deconnexion">
         <i class="fas fa-sign-out-alt"></i>
         </a>
+        
       </li>
-      
     </ul>
     <div class='burger'>
-       <span><i class="fas fa-bars"></i></span>
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
     </div>
   </nav>
 

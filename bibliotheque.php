@@ -43,7 +43,7 @@ $AllBooks=$books->retrieveAllBooks();
                 <img class="thumbnail" src="img/<?=$data["photo"]?>" alt="">
                 <div class="post-preview">
                 <h6 class="post-tittle"><?=$data["titre"]?></h6>
-                <div class="dropdown">
+                <div class="dropdown" title="description">
                     <div id="dLabel" type="button" class='info-book' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-caret-down"></i>
                     </div>

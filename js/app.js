@@ -22,18 +22,7 @@ function getDateTime(){
 
 }
 function getMessage(){
-  var theDate = new Date
-  var hour = theDate.getHours()
-  if (hour<=14 && hour>5){
-    var txt ='Bonjour,'
-  }
-  else if (hour<18 && hour>14){
-    var txt='Bon après-midi,'
-  }
-  else if(hour>18 || hour<5){
-    var txt ='Bonsoir,'
-  }
-  document.querySelector('.pres').innerHTML= txt+' Bienvenue sur le site officiel de BiblioliB.<br>'
+  document.querySelector('.pres').innerHTML=' Bienvenue sur le site officiel de BiblioliB.<br>'
 }
 
 

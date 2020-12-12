@@ -31,12 +31,15 @@ include('nav_bar.php');
             <button type="submit" class="btn btn-transparent">Valider</button>
             </div>
             <br>
-            <a href="inscription.php" class="link"><span >S'inscrire</span></a>
+            <a href="inscription.php"><span class="link">S'inscrire</span></a>
           </form>
         </div>
     </div>
   </div>
 </section>
+
+
+
 
 
 

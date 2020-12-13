@@ -22,7 +22,7 @@ function getDateTime(){
 
 }
 function getMessage(){
-  document.querySelector('.pres').innerHTML=' Bienvenue sur le site officiel de BiblioliB.<br>'
+  document.querySelector('.pres').innerHTML='Bienvenue sur le site officiel de BiblioliB.<br>'
 }
 
 

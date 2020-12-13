@@ -18,7 +18,7 @@
     <ul class='nav-links'>
   
     <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
+        <a href="ri.php" class="btn"  title="Réglement interieur">
         <i class="fab fa-bootstrap"></i><span>ibliolib</span> 
         </a>
       </li>
@@ -28,7 +28,7 @@
         </a>
       </li>
       <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
+        <a href="traitements/deconnectadmin.php" class="btn"  title="deconnexion">
         <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>

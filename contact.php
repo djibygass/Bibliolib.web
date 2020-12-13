@@ -1,6 +1,5 @@
 <?php
 include 'nav_bar.php';
-
 ?>
 <div class="container">
  <div class="c-wrapper">
@@ -10,21 +9,38 @@ include 'nav_bar.php';
     </div>
 
     <div class='form-c-wrapper'>
-    <form method='POST' action='#'>
+          <?php
+           if (isset($_GET['ERREUR'])){
+          ?>
+             <div class="alert alert-danger" role="alert">
+               Merci de Compléter tous les champs !!!
+             </div>
+             <?php
+               }
+           
+           if (isset($_GET['VALID'])){
+          ?>
+             <div class="alert alert-success" role="alert">
+              <i class="far fa-paper-plane"></i>
+             </div>
+             <?php
+               }
+             ?>
+    <form  method='POST' action='./traitements/sendingform'>
           <div class="form-group">
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Prénom" name='login'>
+            <input type="text" class="form-control"  placeholder="Prénom" name='prenom' required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nom" name='Login'>
+            <input type="text" class="form-control"  placeholder="Nom" name='nom' required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email" name='login'>
+            <input type="text" class="form-control"  placeholder="Email" name='email' required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Sujet" name='login'>
+            <input type="text" class="form-control"  placeholder="Sujet" name='sujet' required>
           </div>
           <div class="form-group">
-           <textarea class="form-control"        id="exampleFormControlTextarea1" placeholder="Message" rows="4"></textarea>
+           <textarea class="form-control"        placeholder="Message" rows="4" name="message"></textarea>
           </div>
           <div>
           <button type="submit" class="btn btn-transparent">Envoyer</button>
@@ -33,3 +49,19 @@ include 'nav_bar.php';
     </div>
   </div>
 </div><!-- // End #container -->
+
+
+
+
+
+
+<script>
+  const divAlt = document.querySelector('.alert.alert-success')
+  const icon = document.querySelector('.icon-c-wrapper')
+  if (divAlt){
+    icon.innerHTML = '<i class="fas fa-envelope"></i>'
+  }
+</script>
+<?php
+include('closenav.php');
+?>

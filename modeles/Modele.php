@@ -12,7 +12,7 @@ abstract class Modele{
     //$this-> to refer to the current object
     //self:: to refer to the current class
     if (self::$db == null){
-      self::$db = new PDO("mysql:host=localhost;dbname=bdd_bibliotheque;charset=UTF8","root","");
+      self::$db = new PDO("mysql:host=localhost;dbname=bibliolib;charset=UTF8","root","");
     }
     return self::$db;
   }

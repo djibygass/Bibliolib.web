@@ -13,6 +13,10 @@ Class Customers extends Modele{
     $sql = "INSERT INTO clients(nom, prenom, login, mdp) VALUES (?, ?, ?, ?)";
     return $this->executeRequest($sql,[$lastname,$firstname,$login,$password]);
   }
+  public function sendMessage(string $firstname, string $lastname, string $email,string $subject, string $message ){
+    $sql = "INSERT INTO messages(prenom, nom, email, sujet, contenu, date_time) VALUES (?,?,?,?,?,NOW())";
+    return $this->executeRequest($sql,[$firstname,$lastname,$email,$subject,$message]);
+  }
 
 }
 

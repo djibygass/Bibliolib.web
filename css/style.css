@@ -108,6 +108,7 @@
     gap: 20px;
     justify-content: space-around;
     padding-bottom: 50px;
+    
   }
   
   .thumbnail{
@@ -128,7 +129,7 @@
     color: #4b5156;
     font-size:14px;
   }
-  .info-book{
+  #dLabel.info-book{
     text-align:center;
     height: 30px;
     width:30px;
@@ -209,6 +210,7 @@
       padding-top: 10px;
       margin:1em;
       background-color: var(--Wbg); 
+      overflow-x: scroll;
      
     }
     .column-title{
@@ -265,6 +267,14 @@
       color:var(--primaryColor);
       font-size:10em;
       padding-bottom:0.1em;
+    }
+    .fas.fa-envelope{
+      color:var(--primaryColor);
+      font-size:10em;
+      padding-bottom:0.1em;
+    }
+    .form-group{
+      margin-bottom:1em;
     }
 
   /* connexion.php */
@@ -354,8 +364,8 @@
     .nav-links{
       position:absolute;
       right:0px;
-      height:92vh;
-      top:15vh;
+      height:70vh;
+      top:10vh;
       background-color: var(--color1);
       background-color: var(--color2); 
       display: flex;
@@ -366,10 +376,11 @@
       transition:transform 0.5s ease-in;
     }
     .nav-links li{
-      opacity: 0;
+      opacity: 0.5;
     }
     .burger{
       display: block;
+      margin: 1em;
     }
     .info-wrapper{
       display:grid;

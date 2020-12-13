@@ -39,9 +39,7 @@
       </li>
     </ul>
     <div class='burger'>
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+       <span><i class="fas fa-bars"></i></span>
     </div>
   </nav>
 

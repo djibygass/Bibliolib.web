@@ -16,9 +16,9 @@
     <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
 
     <ul class='nav-links'>
-     <li>
+    <li>
         <a href="contact.php" class="btn">      
-            <span>contact-form</span>
+            <span>Contact</span>
         </a>
       </li>
       <li>
@@ -39,9 +39,7 @@
       </li>
     </ul>
     <div class='burger'>
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+       <span><i class="fas fa-bars"></i></span>
     </div>
   </nav>
 

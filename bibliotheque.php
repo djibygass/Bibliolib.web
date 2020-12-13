@@ -50,6 +50,7 @@ $AllBooks=$books->retrieveAllBooks();
                     <div class="dropdown-menu" aria-labelledby="dLabel">
                     <?=$data["description"]?>
                     </div>
+                    
                 </div>
           
                 <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>emprunter</span></button></a>

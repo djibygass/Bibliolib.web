@@ -1,5 +1,8 @@
 <?php
 include('nav_bar.php');
+require_once "./modeles/Posts.php";
+$post = new Posts();
+$posts = $post->showAllPost();
 ?>
 <div class="main-container flex">
   <div class='hour'> </div>
@@ -14,15 +17,24 @@ include('nav_bar.php');
     <h4 class='column-title'>Actualités</h4>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/bg.jpg" class="d-block w-100" alt="...">
-    </div>
+  <div class="carousel-item active">
+      <img src="./img/actu.jpg" class="d-block w-100" alt="...">
+  </div>
+    <?php
+    foreach($posts as $pst){
+    ?>
     <div class="carousel-item">
+      <img src="<?=$pst['content']?>" class="d-block w-100" alt="...">
+    </div>
+    <?php
+    }
+    ?>
+    <!-- <div class="carousel-item">
       <img src="./img/1984.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
       <img src="./img/200rec.jpg" class="d-block w-100" alt="...">
-    </div>
+    </div> -->
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

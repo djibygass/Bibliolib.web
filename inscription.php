@@ -46,7 +46,7 @@ include('nav_bar.php');
           <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Mot de passe" name='motdepasse'>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Vérification" name='motdepasseVerif'>
+          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Vérification du mot de passe" name='motdepasseVerif'>
         </div>
         <div>
         <button type="submit" class="btn btn-transparent">Valider</button>

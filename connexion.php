@@ -22,10 +22,10 @@ include('nav_bar.php');
           
           <form method='POST' action='traitements/connexion.php'>
             <div class="form-group">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Login" name='login'>
+              <input type="text" class="form-control"  placeholder="Login" name='login'>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Mot de passe" name='motdepasse'>
+              <input type="password" class="form-control"  placeholder="Mot de passe" name='motdepasse'>
             </div>
             <div>
             <button type="submit" class="btn btn-transparent">Valider</button>

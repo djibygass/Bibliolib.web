@@ -42,19 +42,11 @@ $AllBooks=$books->retrieveAllBooks();
             <div class="post">
                 <img class="thumbnail" src="img/<?=$data["photo"]?>" alt="">
                 <div class="post-preview">
-                <h6 class="post-tittle"><?=$data["titre"]?></h6>
-                <div class="dropdown" title="description">
-                    <div id="dLabel" type="button" class='info-book' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-caret-down"></i>
+                    <div class="desc" >
+                    <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
+                    <p title="description"><?=$data["description"]?></p> 
                     </div>
-                    <div class="dropdown-menu" aria-labelledby="dLabel">
-                    <?=$data["description"]?>
-                    </div>
-                    
-                </div>
-          
-                <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>emprunter</span></button></a>
-
+                    <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>emprunter</span></button></a>
                 </div>
             </div>
         </div>
@@ -65,39 +57,6 @@ $AllBooks=$books->retrieveAllBooks();
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

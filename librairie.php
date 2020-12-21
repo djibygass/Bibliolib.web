@@ -46,7 +46,7 @@ $AllBooks=$books->retrieveAllBooks();
                     <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
                     <p title="description"><?=$data["description"]?></p> 
                     </div>
-                    <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>emprunter</span></button></a>
+                    <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Acheter</span></button></a>
                 </div>
             </div>
         </div>

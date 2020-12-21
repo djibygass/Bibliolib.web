@@ -14,7 +14,7 @@ include('nav_bar.php');
           ?>
           <div class="alert alert-danger" role="alert">
             Login ou Mot de Passe incorrect !!
-            </div>
+          </div>
         <?php
         
         }

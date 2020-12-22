@@ -24,7 +24,7 @@ $posts = $post->showAllPost();
     foreach($posts as $pst){
     ?>
     <div class="carousel-item">
-      <img src="<?=$pst['content']?>" class="d-block w-100" alt="...">
+      <img src="<?=$pst['content']?>" class="d-block w-100" alt="..." >
     </div>
     <?php
     }

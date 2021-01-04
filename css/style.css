@@ -19,6 +19,7 @@
     margin: 0;
     font-family: 'Nunito', sans-serif;
   }
+ 
 
   .pres{
     color: var(--primaryColor);
@@ -149,6 +150,10 @@
   .black{
 
     color: black;
+  }
+  .price{
+    margin-left:2em;
+    font-size: 15px;
   }
 
 /* nav-bar */
@@ -332,6 +337,9 @@
     .es-wrapper-r-content {
       background-color: var(--primaryColor);
     }
+    .tab-content>.active{
+      display: contents;
+    }
   /* admin.php */
   .fas.fa-tools{
     color:var(--primaryColor);
@@ -356,10 +364,7 @@
     opacity: 1;
   }
   /* espaceadmin */
-  .list-group{
-    background-color:#260b23;
-    margin-left:1em;
-  }
+
   a#list-profile-list.list-group-item.list-group-item-action,a#list-home-list.list-group-item.list-group-item-action,a#list-settings-list.list-group-item.list-group-item-action, a#list-messages-list.list-group-item.list-group-item-action{
     background-color:#413f52;
     color:var(--primaryColor);
@@ -368,7 +373,10 @@
     margin-top:2em;
   }
 
-
+  /* buyabook */
+  /* .card.mb-3{
+    width:100%;
+  } */
 
 
 /* medias */
@@ -378,7 +386,7 @@
   @media screen and (max-width: 850px){
     body{
       overflow-x: hidden;
-    }
+    } 
     .nav-links{
       position:absolute;
       right:0px;
@@ -418,15 +426,17 @@
       justify-content: space-between;
     }
     .icon-c-wrapper{
-    display:none;}
+    display:none;
+    }
     
   }
 
-  /* @media screen and (max-width: 237px){
+  @media screen and (max-width: 237px){
     .nav-links{
       width: 60%;
+      display: none;
     }
-  } */
+  } 
 
 .nav-active{
   transform: translateX(0%);

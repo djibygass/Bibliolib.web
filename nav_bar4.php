@@ -13,30 +13,26 @@
 <body class='bodyM'>
 <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
     
-    <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
+    <a class="navbar-brand" href="librairie.php"><i class="fas fa-chevron-left"></i></a>
 
     <ul class='nav-links'>
-     <li>
-        <a href="#" class="btn">      
-            <span><i class="fas fa-suitcase"></i></span>
-        </a>
-      </li>
-     <li>
-         <a href="bibliotheque.php" class="btn">
-          Bibliothèque 
+  
+    <li>
+        <a href="ri.php" class="btn"  title="Réglement interieur">
+        <i class="fab fa-bootstrap"></i><span>ibliolib</span> 
         </a>
       </li>
       <li>
-        <a href="librairie.php" class="btn">
-          Librairie
+        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
+        <i class="fas fa-comments"></i>
         </a>
       </li>
       <li>
-        <a href="traitements/deconnexion.php" class="btn"  title="deconnexion">
+        <a href="traitements/deconnectadmin.php" class="btn"  title="deconnexion">
         <i class="fas fa-sign-out-alt"></i>
         </a>
-        
       </li>
+      
     </ul>
     <div class='burger'>
        <span><i class="fas fa-bars"></i></span>

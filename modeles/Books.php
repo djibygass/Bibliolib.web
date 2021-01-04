@@ -5,12 +5,13 @@ require_once "Modele.php";
 class Books extends Modele{
   //return all books 
   public function retrieveAllBooks(){
-    $sql="SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,quantite,id_livres  
+    $sql="SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,quantite,id_livres,prix  
     FROM livres
     JOIN auteurs USING (id_auteurs)
     JOIN categories_livres USING (id_catLivres);";
     return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
   }
+
   //return all borrowed books
   public function borrowedBooks(int $idUser){
     $sql = "SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,id_livres  
@@ -21,9 +22,16 @@ class Books extends Modele{
     JOIN clients USING (id_clients)
     Where emprunter.id_clients = ?;";
   
-    
     return $this->executeRequest($sql,[$idUser])->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  //check that the book is not already borrowed...
+  public function checkInBorrowedBook(int $idUser, int $idBook){
+    $sql ="SELECT COUNT(*) FROM emprunter WHERE id_clients = ? AND id_livres = ?";
+    
+    return $this->executeRequest($sql,[$idUser,$idBook])->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   // return null 
   //this function is in charge of insert the (user_id, book_id) in the bd and update the quantity of books 
   public function borrowABook(int $idUser, int $idBook){
@@ -35,6 +43,7 @@ class Books extends Modele{
     $this->executeRequest($sql,[$idBook]);
 
   }
+  //rendre livre 
  public function returnABook(int $idBook){
    //supp l'user aussi
   $sql ='DELETE FROM emprunter where id_livres = ?';
@@ -42,10 +51,26 @@ class Books extends Modele{
 
   $sql='UPDATE livres SET quantite = quantite+1 where id_livres = ?';
   $this->executeRequest($sql,[$idBook]);
- } 
-
-
-
+ }
+ // return a book when we give him the id.
+ public function showABook(int $idBook){
+  $sql="SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,quantite,id_livres,prix  
+  FROM livres
+  JOIN auteurs USING (id_auteurs)
+  JOIN categories_livres USING (id_catLivres)
+   WHERE id_livres = ?;";
+   return $this->executeRequest($sql,[$idBook])->fetch(PDO::FETCH_ASSOC);
+ }
+ // return the result of searching 'str'
+ public function searchABook(string $str){
+  $sql="SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,quantite,id_livres,prix  
+  FROM livres
+  JOIN auteurs USING (id_auteurs)
+  JOIN categories_livres USING (id_catLivres)
+  WHERE titre like ? ;";
+  $str = "%".$str."%";
+   return $this->executeRequest($sql,[$str])->fetchAll(PDO::FETCH_ASSOC);
+ }
 
 
 }

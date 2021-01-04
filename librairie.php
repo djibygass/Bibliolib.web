@@ -1,35 +1,31 @@
 <?php
 session_start();
 include('nav_bar1.php');
-// if(!$_SESSION['login']){
-//     header('location:connexion.php');
-// }else{
-    require_once("modeles/Books.php");
-    $books = new Books();
-//}
+require_once("modeles/Books.php");
+$books = new Books();
 
-if(isset($_GET['id'])){
-    $idClients = $_SESSION['idClient'];
-    $idLivres = $_GET['id'];
-    $books->borrowABook($idClients,$idLivres);
-    header('location:espacemembre.php');
+
+// if isset(get(search)) -> $search else ''->$search
+$search = $_GET['search'] ?? '';
+//SEARCHING 
+if($search){
+    $AllBooks=$books->searchABook($search);
+    //var_dump($AllBooks);
+}else{
+    $AllBooks=$books->retrieveAllBooks();
 }
-
-$AllBooks=$books->retrieveAllBooks();
 ?>
 
 <div class="search-panel-wrapper">
     <div class="search-panel">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-chevron-circle-down"></i></span>
+        <form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Rechercher" name="search" value="<?= $search?>">
+                <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
             </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-            <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-search"></i></span>
-            </div>
-        </div>
+        </form>
     </div>
+  
 </div>
 
 
@@ -40,13 +36,14 @@ $AllBooks=$books->retrieveAllBooks();
                     ?>              
         <div>
             <div class="post">
+            
                 <img class="thumbnail" src="img/<?=$data["photo"]?>" alt="">
                 <div class="post-preview">
                     <div class="desc" >
                     <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
                     <p title="description"><?=$data["description"]?></p> 
                     </div>
-                    <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Acheter</span></button></a>
+                    <a href="buyabook.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Acheter</span></button></a><span class="price"><?=$data["prix"]?> €</span>
                 </div>
             </div>
         </div>

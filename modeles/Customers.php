@@ -17,6 +17,9 @@ Class Customers extends Modele{
     $sql = "INSERT INTO messages(prenom, nom, email, sujet, contenu, date_time) VALUES (?,?,?,?,?,NOW())";
     return $this->executeRequest($sql,[$firstname,$lastname,$email,$subject,$message]);
   }
+  // public function buyABook(string $firstname, string $lastname, string $email){
+
+  // }
 
 }
 

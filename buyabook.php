@@ -26,7 +26,7 @@ if(isset($_GET['id'])){
       </div>
       <div class="es-wrapper-r">
          <div class='es-wrapper-r-content'>
-            <form method='POST' action = 'traitements/inscription.php'>
+            <form method='POST' action = 'traitements/achat.php'>
             <div class="form-group">
                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nom" name='nom'>
             </div>
@@ -37,7 +37,7 @@ if(isset($_GET['id'])){
                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="email" name='email'>
             </div>
             <div class="form-group">
-               <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Adresse de Livraison" name='adresse'>
+               <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Adresse de Livraison" name='adresse'>
             </div>
             <div class="form-group">
                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Paiement" name='paiement'>

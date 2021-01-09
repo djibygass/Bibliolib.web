@@ -17,7 +17,7 @@
 
     <ul class='nav-links'>
   
-    <li>
+      <li>
         <a href="ri.php" class="btn"  title="Réglement interieur">
         <i class="fab fa-bootstrap"></i><span>ibliolib</span> 
         </a>
@@ -27,12 +27,6 @@
         <i class="fas fa-comments"></i>
         </a>
       </li>
-      <li>
-        <a href="traitements/deconnectadmin.php" class="btn"  title="deconnexion">
-        <i class="fas fa-sign-out-alt"></i>
-        </a>
-      </li>
-      
     </ul>
     <div class='burger'>
        <span><i class="fas fa-bars"></i></span>

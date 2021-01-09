@@ -46,6 +46,27 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
   }
 }
 
+if(isset($_GET['idrendre'])){
+  
+    $idLivres = $_GET['idrendre'];
+  $books->returnABook($idLivres);
+  unset($_GET['idrendre']);
+  $count++;
+  ?>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Vous avez bien Rendu le livre</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <?php
+  
+ 
+  header('Location:espacemembre.php');
+  
+}
+
 $dt = $books->borrowedBooks($_SESSION['idClient']);
 ?>
 
@@ -68,18 +89,35 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
             </div>
           </div>
 
+          <p>
+              <a class="btn" data-bs-toggle="collapse" href="#collapseExample2"  aria-expanded="false" aria-controls="collapseExample2">
+                F.A.Q
+              </a>
+            </p>
+          <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">Déclarer une Perte</a> 
+               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">Poser des Questions</a> 
+              <a href=""></a>
+              <a href=""></a>
+            </div>
+          </div>
+
             <div>
             <p>
                 <a class="btn" data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample">
                   Nos services
                 </a>
-              </p>
+            </p>
             <div class="collapse" id="collapseExample">
               <div class="card card-body">
               <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Carte</a>
-                <a href="">Réseaux sociaux et blogs</a>
+              <a href="">Réseaux sociaux et blogs</a>
+              
               </div>
             </div>
+          
+
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Les livres Empruntés</a>
           </div>
         </div>
@@ -124,7 +162,7 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
                 <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
                 <p title="description"><?=$data["description"]?></p> 
               </div>
-              <a href="espacemembre.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Rendre</span></button></a>
+              <a href="espacemembre.php?idrendre=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Rendre</span></button></a>
             </div>
           </div>
         </div>

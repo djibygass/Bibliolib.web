@@ -13,24 +13,16 @@
 <body class='bodyM'>
 <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
     
-    <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
+   <a class="navbar-brand" href="espaceadmin.php"><i class="fas fa-chevron-left"></i></a>
 
     <ul class='nav-links'>
-  
     <li>
-        <a href="ri.php" class="btn"  title="Réglement interieur">
-        <i class="fab fa-bootstrap"></i><span>bibliolib</span> 
-        </a>
-      </li>
-      <li>
         <a href="inbox.php" class="btn"  title="ChatBox">
         <i class="fas fa-comments"></i>
         </a>
       </li>
-      <li>
-        <a href="traitements/deconnectadmin.php" class="btn"  title="deconnexion">
-        <i class="fas fa-sign-out-alt"></i>
-        </a>
+    <li>
+    <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
       </li>
       
     </ul>

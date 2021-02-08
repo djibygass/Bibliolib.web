@@ -12,7 +12,6 @@
 .text{
   color:var(--primaryColor);
 }
-
 .containerPres{
   display: flex;
   content: center;
@@ -354,3 +353,4 @@ tr td{
 /*---------------------------------------------------------------------------------------------*/  
 
                  /*Utilities*/
+

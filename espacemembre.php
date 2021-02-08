@@ -7,6 +7,7 @@ $books = new Books();
 
 // if he's not connect
 if(!isset($_SESSION['login'])){
+  // if he's trying to borrow a book
   if(isset($_GET['idemprunt'])){
     //$_SESSION['noconnection'] take the book's id (idemprunt) if he's trying to borrow it being offline( not connected)
     $_SESSION['noconnection'] = $_GET['idemprunt'];

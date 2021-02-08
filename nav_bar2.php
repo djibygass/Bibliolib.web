@@ -18,7 +18,7 @@
     <ul class='nav-links'>
      <li>
         <a href="#" class="btn">      
-            <span><i class="fas fa-suitcase"></i></span>
+            <span><i class="far fa-check-circle"></i></span>
         </a>
       </li>
      <li>

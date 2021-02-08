@@ -5,7 +5,7 @@ require_once "Modele.php";
 class Books extends Modele{
   //return all books 
   public function retrieveAllBooks(){
-    $sql="SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,quantite,id_livres,prix  
+    $sql="SELECT auteurs.nom AS A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres AS idCat,description,photo,quantite,id_livres,prix  
     FROM livres
     JOIN auteurs USING (id_auteurs)
     JOIN categories_livres USING (id_catLivres);";

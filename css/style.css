@@ -193,7 +193,6 @@
     border:1px solid var(--primaryColor);
     color: var(--primaryColor)
   }
-
 /* Specific to each page*/
   /* index.php */
     .info-wrapper{
@@ -379,7 +378,52 @@
   /* .card.mb-3{
     width:100%;
   } */
-
+   /*inbox.php*/
+  .box-container{
+    height: 100%;
+    width: 100%;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    grid-template-areas:
+    'es-wrapper-l es-wrapper-r' ;
+    padding-top: 1em;
+    justify-content: space-between;
+  }
+  .box-wrapper-l{
+    grid-area: es-wrapper-l;
+    display: grid;
+    align-content: center;
+    padding-top: 15px;
+    margin:1em;
+    border:1px solid var(--primaryColor); 
+    align-content: flex-start;
+  }
+  .box-wrapper-r{
+    grid-area: es-wrapper-r;
+    display: grid;
+ 
+    padding-top: 15px;
+    margin:1em;
+    border:1px solid var(--primaryColor);
+  }
+  .contact-list-container{
+    background-color:var(--Wbg);
+  }
+  .contact-list{
+    list-style: none;
+  }
+  .contact{
+   
+    border-bottom:0.1px solid black;
+    padding: 1em;
+  }
+  .contact:hover{
+    background-color:#acabbf;
+  }
+  .card-body{
+    min-height: 500px;
+  }
+  /*inbox.php*/
 
 /* medias */
 

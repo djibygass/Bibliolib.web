@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('nav_bar3.php');
-if(!$_SESSION['motdepasse']){
+if(!$_SESSION['LoginAdmin']){
   header('location:admin.php');
 }
 ?>

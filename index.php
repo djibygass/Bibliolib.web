@@ -1,6 +1,4 @@
-
 <?php
-//test
 include('nav_bar.php');
 require_once "./modeles/Posts.php";
 $post = new Posts();

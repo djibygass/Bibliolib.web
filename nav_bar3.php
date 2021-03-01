@@ -17,18 +17,13 @@
 
     <ul class='nav-links'>
   
-    <li>
-        <a href="ri.php" class="btn"  title="Réglement interieur">
-        <i class="fab fa-bootstrap"></i><span>bibliolib</span> 
-        </a>
-      </li>
       <li>
-        <a href="inbox.php" class="btn"  title="ChatBox">
+        <a href="inbox.php" class=""  title="ChatBox">
         <i class="fas fa-comments"></i>
         </a>
       </li>
       <li>
-        <a href="traitements/deconnectadmin.php" class="btn"  title="deconnexion">
+        <a href="traitements/deconnectadmin.php" class=""  title="deconnexion">
         <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>

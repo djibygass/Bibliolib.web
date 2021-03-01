@@ -18,22 +18,22 @@
 
     <ul class='nav-links'>
      <li>
-        <a href="contact.php" class="btn">      
+        <a href="contact.php" class="">      
             <span>Contact</span>
         </a>
       </li>
       <li>
-        <a href="bibliotheque.php" class="btn">
+        <a href="bibliotheque.php" class="">
           Bibliothèque 
         </a>
       </li>
       <li>
-        <a href="librairie.php" class="btn">
+        <a href="librairie.php" class="">
           Librairie
         </a>
       </li>
       <li>
-        <a href="connexion.php" class="btn">
+        <a href="connexion.php" class="">
         <i class="fas fa-user-alt"></i>
         </a>
       </li>

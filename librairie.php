@@ -3,27 +3,19 @@ session_start();
 include('nav_bar1.php');
 require_once("modeles/Books.php");
 $books = new Books();
+$AllBooks=$books->retrieveAllBooks();
 
 
-// if isset(get(search)) -> $search else ''->$search
-$search = $_GET['search'] ?? '';
-//SEARCHING 
-if($search){
-    $AllBooks=$books->searchABook($search);
-    //var_dump($AllBooks);
-}else{
-    $AllBooks=$books->retrieveAllBooks();
-}
 ?>
 
 <div class="search-panel-wrapper">
     <div class="search-panel">
-        <form>
+        <form action="traitements/search.php" method="POST">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Rechercher" name="search" value="<?= $search?>">
-                <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                <input type="text" class="form-control" placeholder="Rechercher un titre" name="word"  oninput="se(this.value)">
             </div>
         </form>
+   
     </div>
   
 </div>
@@ -56,23 +48,17 @@ if($search){
 </div>
 
 
-<!-- 
-<script>
-const description = document.querySelector('.info-book')
-const desc = document.querySelector('.post-intro')
 
-description.innerHTML='<i class="fas fa-caret-down"></i>'
-// description.addEventListener('click',showDesc)
 
-// function showDesc(e){
-//     description.innerHTML='<i class="fas fa-caret-up"></i>'
-//     desc.style.fontSize = '50px'
-//}
-//$('.info-book').on('show.bs.dropdown', function () {
-    description.innerHTML='<i class="fas fa-caret-up"></i>'
-    desc.style.fontSize = '50px'
-//})
-</script> -->
+
+
+
+<script type="text/javascript" src="./js/searchlib.js"></script>
 <?php
 include('closenav.php');
 ?>
+
+
+
+
+

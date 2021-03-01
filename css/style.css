@@ -19,7 +19,9 @@
     margin: 0;
     font-family: 'Nunito', sans-serif;
   }
- 
+  html{
+    overflow-x: hidden;
+  }
 
   .pres{
     color: var(--primaryColor);
@@ -39,7 +41,7 @@
   .text{
     color:var(--primaryColor);
   }
-
+  
 
   .body{
     background-image: url('../img/bg.jpg');
@@ -48,7 +50,7 @@
     background-repeat: no-repeat;
     background-color: #413f52;
     background-size: cover;
-
+    width: 100%;
     overflow-x: hidden;
     display: block;
   }
@@ -98,7 +100,7 @@
     margin-bottom:2em;
   }
   .search-panel{
-    min-width:500px;
+    
     padding-top:auto ;
     display: flex;
     flex-direction: column;
@@ -112,7 +114,6 @@
     padding-bottom: 50px;
     
   }
-  
   .thumbnail{
     display:block;
     width:100%;
@@ -155,7 +156,31 @@
     margin-left:2em;
     font-size: 15px;
   }
-
+.display{
+  color: rgb(38, 38, 33);
+}
+.transparent {
+  border: 1px solid var(--primaryColor);
+  color: var(--primaryColor);
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.show {
+  width: auto;
+  height: auto;
+  /* overflow-x: auto; */
+  padding: 20px;
+}
 /* nav-bar */
   .navbar-brand{
     font-size:2em;
@@ -324,6 +349,7 @@
       padding-top: 15px;
       margin:1em;
       border:1px solid var(--primaryColor);
+      background-color: white;
     
      
     }
@@ -366,18 +392,43 @@
   }
   /* espaceadmin */
 
-  a#list-profile-list.list-group-item.list-group-item-action,a#list-home-list.list-group-item.list-group-item-action,a#list-settings-list.list-group-item.list-group-item-action, a#list-messages-list.list-group-item.list-group-item-action{
-    background-color:#413f52;
-    color:var(--primaryColor);
+  .list-container{
+    background-color:var(--Wbg);
   }
-  div.row{
-    margin-top:2em;
+  .list{
+    list-style: none;
   }
+  .items{
+   
+    border-bottom:0.1px solid black;
+    padding: 1em;
+  }
+  .items_inscription{
+    border-bottom:0.1px solid black;
+    padding: 1em;
+  }
+  .items_vendre{
+    border-bottom:0.1px solid black;
+    padding: 1em;
+  }
+  .items_vendre:hover{
+    background-color:#acabbf;
+  }
+  .items_inscription:hover{
+    background-color:#acabbf;
+  }
+  .items:hover{
+    background-color:#acabbf;
+  }
+  .block_vendre{
+    display: none;
+  }
+  .block_inscription{
+    display: none;
+  }
+  /* espaceadmin */
 
-  /* buyabook */
-  /* .card.mb-3{
-    width:100%;
-  } */
+
    /*inbox.php*/
   .box-container{
     height: 100%;
@@ -439,13 +490,13 @@
       height:70vh;
       top:10vh;
       background-color: var(--color1);
-      background-color: var(--color2); 
       display: flex;
       flex-direction:column;
       align-items: center;
       width:50%;
       transform: translateX(100%);
       transition:transform 0.5s ease-in;
+      z-index: 9;
     }
     .nav-links li{
       opacity: 0.5;

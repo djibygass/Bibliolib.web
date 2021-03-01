@@ -23,7 +23,7 @@
         </a>
       </li>
       <li>
-        <a href="traitement/deconnectadmin.php" class="btn"  title="deconnexion">
+        <a href="traitement/deconnectadmin.php" class=""  title="deconnexion">
         <i class="fas fa-comments"></i>
         </a>
       </li>

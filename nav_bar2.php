@@ -22,17 +22,17 @@
         </a>
       </li>
      <li>
-         <a href="bibliotheque.php" class="btn">
+         <a href="bibliotheque.php" class="">
           Bibliothèque 
         </a>
       </li>
       <li>
-        <a href="librairie.php" class="btn">
+        <a href="librairie.php" class="">
           Librairie
         </a>
       </li>
       <li>
-        <a href="traitements/deconnexion.php" class="btn"  title="deconnexion">
+        <a href="traitements/deconnexion.php" class=""  title="deconnexion">
         <i class="fas fa-sign-out-alt"></i>
         </a>
         

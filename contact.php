@@ -26,7 +26,7 @@ include 'nav_bar.php';
              <?php
                }
              ?>
-    <form  method='POST' action='./traitements/sendingform'>
+    <form  method='POST' action='./traitements/sendingform.php'>
           <div class="form-group">
             <input type="text" class="form-control"  placeholder="Prénom" name='prenom' required>
           </div>

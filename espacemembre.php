@@ -143,6 +143,16 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
               <h5 class="card-title"><?=$_SESSION['login']?></h5>
               <p class="card-text">statut abonnement vert - rouge</p>
               <p class="card-text"><small class="text-muted">id abonnement [a-z][A-Z][1-9]</small></p>
+              <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
             </div>
           </div>
         </div>
@@ -164,6 +174,7 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
                 <p title="description"><?=$data["description"]?></p> 
               </div>
               <a href="espacemembre.php?idrendre=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Rendre</span></button></a>
+              
             </div>
           </div>
         </div>
@@ -182,7 +193,6 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
 
 
 
-<script src="./js/showonclick.js"></script>
 
 <?php
 include('closenav.php');

@@ -72,6 +72,12 @@ class Books extends Modele{
    return $this->executeRequest($sql,[$str])->fetchAll(PDO::FETCH_ASSOC);
  }
 
+ public function searchBooks($name){
+  $sql="SELECT * FROM livres WHERE titre like ? ";
+  $name = "%".$name."%";
+  return $this->executeRequest($sql,[$name])->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 }
 ?>

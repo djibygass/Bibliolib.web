@@ -23,7 +23,9 @@ $AllBooks=$books->retrieveAllBooks();
 
 <div class="post-wrapper">
 
-        <?php
+     
+     
+     <?php
         foreach($AllBooks as $data){
             
         ?>              

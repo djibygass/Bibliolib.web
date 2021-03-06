@@ -2,7 +2,10 @@
 session_start();
 include('nav_bar2.php');
 require_once "./modeles/Books.php";
+require_once "./modeles/Users.php";
 $books = new Books();
+$users = new Users();
+$adresses = $users->ShowAdresses();
 //var_dump($_SESSION['noconnection']);
 
 // if he's not connect
@@ -83,8 +86,10 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
             </p>
           <div class="collapse" id="collapseExample1">
             <div class="card card-body">
-               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">La liste des bibliothèques</a> 
-               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">Les horaires d'ouverture</a> 
+
+               <a class="list-group-item list-group-item" id="list-bib-list" data-bs-toggle="list" href="#list-bib" role="tab" aria-controls="bib">La liste des bibliothèques</a> 
+          
+               <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#horaires" role="tab" aria-controls="home">Les horaires d'ouverture</a> 
               <a href=""></a>
               <a href=""></a>
             </div>
@@ -127,10 +132,40 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
   </div>
   <div class="es-wrapper-l">
     <div class="tab-content" id="nav-tabContent">
+    
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        yoooooo
+       <h3>bienvenue dans votre espace membre<h3>
       </div>
-      
+
+      <div class="tab-pane fade" id="list-bib" role="tabpanel" aria-labelledby="list-bib-list">
+        <div>
+          <h4 class = "titre-biblio">Notre réseau de bibliothèques</h4>
+          <ul class = "list-bibliotheque">
+          <?php
+          foreach($adresses as $adress){
+            ?>
+        <li class = "list-adresses"><?=$adress['numero'].' '.$adress['rue'].' '.$adress['ville'].' '.$adress['codepostal']?></li>
+        <?php
+          }
+          ?>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="horaires" role="tabpanel" aria-labelledby="list-bib-list">
+        <div>
+          <h4 class = "horaire">Les horaires d'ouverture</h4><br>
+          <div class = "jours">
+        Lundi : 10h - 19h<br>
+        Mardi : 10h - 19h<br>
+        Mercredi : 10h - 19h<br>
+        Jeudi : 10h - 19h<br>
+        Vendredi : 10h - 19h<br>
+        Samedi : 09h - 18h<br>
+        Dimanche : 9h - 13h<br>
+
+          </div>
+        </div>
+      </div>
+
       <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
 
       <div class="card mb-3" style="max-width: 540px;">
@@ -197,4 +232,3 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
 <?php
 include('closenav.php');
 ?>
-

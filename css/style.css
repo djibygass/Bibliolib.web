@@ -86,6 +86,22 @@
     margin-top:1em;
     color:var(--primaryColor);
   }
+
+  .container2{
+    display: flex;
+    align-items: center;
+    content: center;
+    justify-content: center;
+    padding: 2em;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid var(--primaryColor);
+    border-radius: 4em 1em;
+    width: auto;
+    margin-top:3em;
+    color:var(--primaryColor);
+  }
+
   a{
     text-decoration: none;
   }
@@ -317,11 +333,11 @@
       font-size:4em;
       padding-bottom:0.5em;
     }
-    span.link{
+    .link{
       text-decoration: none;
       color:var(--primaryColor);
     }
-    span.link:hover{
+    .link:hover{
       color:#f552;
       
     }

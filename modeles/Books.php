@@ -78,6 +78,11 @@ class Books extends Modele{
   return $this->executeRequest($sql,[$name])->fetchAll(PDO::FETCH_ASSOC);
 }
 
+public function AllBooks(){
+  $sql="SELECT * FROM livres";
+  return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 }
 ?>

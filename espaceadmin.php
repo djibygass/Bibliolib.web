@@ -1,9 +1,12 @@
 <?php
 session_start();
+require_once "modeles/Books.php";
 include('nav_bar3.php');
 if(!$_SESSION['LoginAdmin']){
   header('location:admin.php');
 }
+$Books = new Books();
+$AllBooks = $Books->AllBooks();
 ?>
 
 <div class="containerr">
@@ -16,7 +19,38 @@ if(!$_SESSION['LoginAdmin']){
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+        <form method='POST' action=''>
+            <div class="form-group">
+              <select name='livre' id ='livre'>
+              <?php
+              foreach ($AllBooks as $book){
+              ?>
+                <option value="<?=$book['titre']?>"><?=$book['titre']?> --- <?=$book['prix']?>€</option>
+              <?php 
+              }
+              ?>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Nom et Prénom du client" name='nom' required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Email" name='email' required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Paiement" name='cb' required>
+            </div>
+
+            <div>
+            <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+
         </div>
       </div>
     </div>
@@ -28,7 +62,35 @@ if(!$_SESSION['LoginAdmin']){
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+        <form method='POST' action=''>
+            <div class="form-group">
+              <select name='livre' id ='livre'>
+              <?php
+              foreach ($AllBooks as $book){
+              ?>
+                <option value="<?=$book['titre']?>"><?=$book['titre']?> --- <?=$book['prix']?>€</option>
+              <?php 
+              }
+              ?>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Nom et Prénom du client" name='nom' required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Email" name='email' required>
+            </div>
+
+            <div>
+            <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+
+
         </div>
       </div>
     </div>
@@ -40,7 +102,17 @@ if(!$_SESSION['LoginAdmin']){
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+        <form method='POST' action=''>
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Titre du livre" name='titre' required>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
         </div>
       </div>
     </div>
@@ -52,7 +124,35 @@ if(!$_SESSION['LoginAdmin']){
       </h2>
       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+        <form method='POST' action=''>
+            <div class="form-group">
+              <select name='livre' id ='livre'>
+              <?php
+              foreach ($AllBooks as $book){
+              ?>
+                <option value="<?=$book['titre']?>"><?=$book['titre']?> --- <?=$book['prix']?>€</option>
+              <?php 
+              }
+              ?>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Nom et Prénom du client" name='nom' required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Email" name='email' required>
+            </div>
+
+            <div>
+            <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+
+
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@
 
     <ul class='nav-links'>
      <li>
-        <a href="contact.php" class="">      
+        <a href="contact.php" class="">
             <span>Contact</span>
         </a>
       </li>

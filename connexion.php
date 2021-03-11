@@ -26,10 +26,10 @@ if(isset($_SESSION['login'])){
           
           <form method='POST' action='traitements/connexion.php'>
             <div class="form-group">
-              <input type="text" class="form-control"  placeholder="Login" name='login'>
+              <input type="text" class="form-control"  placeholder="Login" name='login' required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control"  placeholder="Mot de passe" name='motdepasse'>
+              <input type="password" class="form-control"  placeholder="Mot de passe" name='motdepasse' required>
             </div>
             <div>
             <button type="submit" class="btn btn-transparent">Valider</button>

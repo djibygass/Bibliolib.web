@@ -11,13 +11,28 @@ $users = new Users();
 $res = $users->checkAbonnement($id);
 if ($res){
 ?>
-   <div>
-      Votre abonnement est bien activé depuis <?=$res['date_debut']?>
+   <div class='container2'>
+      <h3>Votre abonnement est bien activé depuis <?=$res['date_debut']?></h3>
+      <br>
+      <br>
+      <div>
+         <button class="btn btn-transparent " onclick="confirm()"><span>me désabonner</span></button>
+      </div>
    </div>
 <?php
 }else{
 ?>
+      <?php
+        if (isset($_GET['Erreur'])){
+          ?>
+          <div class="alert alert-danger" role="alert">
+            Champs incorrect
+          </div>
+        <?php
+        }
+        ?>
    <div class="container2">
+
       <div>
       <h2>Je m'abonne à BiBliolib</h2>
       <br>
@@ -41,7 +56,16 @@ if ($res){
 <?php
 }
 ?>
-
+<script>
+   function confirm(){
+      var txt;
+                if (confirm("Press a button!")) {
+                    txt = "You pressed OK!";
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+   }
+</script>
 <?php
 include('closenav.php');
 ?>

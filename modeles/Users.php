@@ -16,8 +16,14 @@ class Users extends Modele{
     //User's subscribtion 
     public function Subscribtion(int $id,string $iban, string $bic){
       $sql = "INSERT INTO abonnements(id_clients,iban,bic,statut,date_debut) VALUES (?,?,?,'1',NOW())";
-      return $this->executeRequest($sql,[$id,$iban,$bic])->fetch();
+      return $this->executeRequest($sql,[$id,$iban,$bic]);
     }
+    //
+    public function showAdresses(){
+      $sql = "SELECT * FROM adresses";
+      return $this->executeRequest($sql)->fetchAll();
+    }
+
   
 }
 ?>

@@ -1,8 +1,7 @@
 <?php
-include('nav_bar.php');
-require_once "./modeles/Posts.php";
-$post = new Posts();
-$posts = $post->showAllPost();
+  include('nav_bar.php');
+  require_once "./modeles/Posts.php";
+  $post = new Posts();
 ?>
 <div class="main-container flex">
   <div class='hour'> </div>

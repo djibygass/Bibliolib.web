@@ -31,7 +31,7 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
     ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <strong>Vous aviez déja emprunter ce livre</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
     </div>
     
     <?php
@@ -39,12 +39,22 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
   else{
     $books->borrowABook($idClients,$idLivres);
     ?>
+
     <div class="alert alert-success" role="alert">
-      <h4 class="alert-heading">Vous avez emprunter un nouveau livre</h4>
-      <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-      <hr>
-      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div>
+        Vous avez emprunté un livre.
+        <p>
+            Le livre vous sera livré dans les plus brefs délai sauf si vous voulez venir le récupérer en magasin.
+            <!-- Vertically centered modal -->
+<div class="modal-dialog modal-dialog-centered">
+  ...
+</div>
+
+        </p>
+      </div>
+      <div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+      </div>
     </div>
     <?php
   }
@@ -57,13 +67,14 @@ if(isset($_GET['idrendre'])){
   unset($_GET['idrendre']);
   $count++;
   ?>
-  <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Vous avez bien Rendu le livre</h4>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-    <hr>
-    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+   <div class="alert alert-success" role="alert">
+      <div>
+        Vous avez rendu un livre.
+      </div>
+      <div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+      </div>
+    </div>
   <?php
   
  

@@ -41,7 +41,15 @@
   .text{
     color:var(--primaryColor);
   }
-  
+  .alert.alert-success{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+  .btn-close{
+    width: 25px;
+    height: 25px;
+  }
 
   .body{
     background-image: url('../img/bg.jpg');

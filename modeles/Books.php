@@ -36,13 +36,14 @@ class Books extends Modele{
   //this function is in charge of insert the (user_id, book_id) in the bd and update the quantity of books 
   public function borrowABook(int $idUser, int $idBook){
 
-    $sql='INSERT INTO emprunter(id_clients,id_livres) values (?,?)';
+    $sql='INSERT INTO emprunter(id_clients,id_livres,en_magasin,statut) values (?,?,1,1)';
     $this->executeRequest($sql,[$idUser,$idBook]);
   
     $sql='UPDATE livres SET quantite = quantite-1 where id_livres = ?';
     $this->executeRequest($sql,[$idBook]);
 
   }
+  //this function is in charge of update the deliver plan when the user want to do clickcollect
   //rendre livre 
  public function returnABook(int $idBook){
    //supp l'user aussi

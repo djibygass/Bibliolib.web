@@ -5,11 +5,13 @@ if(isset($_POST['login']) && !empty($_POST['login']) &&
     isset($_POST['motdepasse']) && !empty($_POST['motdepasse']) && 
     isset($_POST['motdepasseVerif']) && !empty($_POST['motdepasseVerif']) &&
     isset($_POST['nom']) && !empty($_POST['nom']) &&
+    isset($_POST['adresse']) && !empty($_POST['adresse']) &&
     isset($_POST['prenom']) && !empty($_POST['prenom'])){
         
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $login = $_POST['login'];
+    $adresse = $_POST['adresse'];
     $password = $_POST['motdepasse'];
     $passwordVerify = $_POST['motdepasseVerif'];
 
@@ -21,7 +23,7 @@ if(isset($_POST['login']) && !empty($_POST['login']) &&
           }else{
 
               $password = password_hash($password, PASSWORD_BCRYPT);
-              $customer->registerThisCustomer($nom,$prenom,$login,$password);
+              $customer->registerThisCustomer($nom,$prenom,$login,$password,$adresse);
         
               header('location:../connexion.php');
 

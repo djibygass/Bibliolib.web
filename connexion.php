@@ -26,7 +26,7 @@ if(isset($_SESSION['login'])){
           
           <form method='POST' action='traitements/connexion.php'>
             <div class="form-group">
-              <input type="text" class="form-control"  placeholder="Login" name='login' required>
+              <input type="text" class="form-control"  placeholder="Nom d'utilisateur" name='login' required>
             </div>
             <div class="form-group">
               <input type="password" class="form-control"  placeholder="Mot de passe" name='motdepasse' required>

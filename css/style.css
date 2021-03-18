@@ -46,6 +46,7 @@
     flex-direction: row;
     justify-content:space-between;
   }
+  
   .btn-close{
     width: 25px;
     height: 25px;
@@ -160,6 +161,10 @@
     color: #4b5156;
     font-size:14px;
   }
+  .modal-backdrop
+{
+    display:none;
+}
   .desc{
     height: 200px;
     overflow: hidden;
@@ -173,6 +178,13 @@
     overflow-x: auto;
     padding: 20px;
   }
+  
+.modal.fade.show {
+  width: 100%;
+  height: auto;
+  /* overflow-x: auto; */
+  padding: 20px;
+}
   .black{
 
     color: black;

@@ -25,28 +25,31 @@ include('nav_bar.php');
            }
            elseif (isset($_GET['ERREUR3'])){
             ?>
-             <div class="alert alert-danger" role="alert">
-               Merci de Compléter tous les champs !!!
-             </div>
+              <div class="alert alert-danger" role="alert">
+                Merci de Compléter tous les champs !!!
+              </div>
              <?php
              }
       ?>
           
       <form method='POST' action = 'traitements/inscription.php'>
         <div class="form-group">
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nom" name='nom'>
+          <input type="text" class="form-control"  placeholder="Nom" name='nom' required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Prénom" name='prenom'>
+          <input type="text" class="form-control"  placeholder="Prénom" name='prenom' required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Login" name='login'>
+          <input type="text" class="form-control"  placeholder="Login" name='login' required>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Mot de passe" name='motdepasse'>
+          <input type="password" class="form-control"  placeholder="Mot de passe" name='motdepasse' required>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Vérification du mot de passe" name='motdepasseVerif'>
+          <input type="password" class="form-control"  placeholder="Vérification du mot de passe" name='motdepasseVerif' required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Adresse" name='adresse' required>
         </div>
         <div>
         <button type="submit" class="btn btn-transparent">Valider</button>

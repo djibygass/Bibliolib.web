@@ -121,6 +121,7 @@ if(isset($_GET['rendu'])){
 }
 
 $dt = $books->borrowedBooks($_SESSION['idClient']);
+//livres acheté request herreee
 ?>
 
 <div class="es-wrapper">

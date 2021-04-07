@@ -369,6 +369,12 @@
       padding-bottom:0.5em;
     }
     /* espacemembre.php */
+    .fab.fa-instagram,
+    .fab.fa-twitter,
+    .fab.fa-snapchat{
+      font-size: 60px;
+      padding: 10px;
+    }
     .es-wrapper{
       height: 100%;
       width: 100%;

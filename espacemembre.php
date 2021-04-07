@@ -7,6 +7,7 @@ $books = new Books();
 $users = new Users();
 $adresses = $users->ShowAdresses();
 $abonner = $users->checkAbonnement($_SESSION['idClient']);
+
 //var_dump($_SESSION['noconnection']);
 
 // if he's not connect
@@ -37,6 +38,7 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
           <?php
       }
       else{
+       
             if(!($abonner)){
                 ?>
                 <div class="alert alert-danger" role="alert">
@@ -48,7 +50,7 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
                 </div>
               </div>
               <?php
-          }else{
+            }else{
             $books->borrowABook($idClients,$idLivres);
             ?>
 
@@ -121,7 +123,7 @@ if(isset($_GET['rendu'])){
 }
 
 $dt = $books->borrowedBooks($_SESSION['idClient']);
-//livres acheté request herreee
+$bghtbk = $books->boughtBooks($_SESSION['idClient']);
 ?>
 
 <div class="es-wrapper">
@@ -137,7 +139,7 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
           <div class="collapse" id="collapseExample1">
             <div class="card card-body">
 
-               <a class="list-group-item list-group-item" id="list-bib-list" data-bs-toggle="list" href="#list-bib" role="tab" aria-controls="bib">La liste des bibliothèques</a> 
+               <a class="list-group-item list-group-item action" id="list-bib-list" data-bs-toggle="list" href="#list-bib" role="tab" aria-controls="bib">La liste des bibliothèques</a> 
           
                <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#horaires" role="tab" aria-controls="home">Les horaires d'ouverture</a> 
               <a href=""></a>
@@ -152,8 +154,8 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
             </p>
           <div class="collapse" id="collapseExample2">
             <div class="card card-body">
-               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">Déclarer une Perte</a> 
-               <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="index.php" role="tab" aria-controls="home">Poser des Questions</a> 
+               <a class="list-group-item list-group-item-action" id="list-declaration-list" data-bs-toggle="list" href="#list-declaration" role="tab" aria-controls="declaration">Déclarer une Perte</a> 
+               <a class="list-group-item list-group-item-action" id="list-question -list" data-bs-toggle="list" href="#list-question" role="tab" aria-controls="question">Poser des Questions</a> 
               <a href=""></a>
               <a href=""></a>
             </div>
@@ -168,13 +170,13 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
             <div class="collapse" id="collapseExample">
               <div class="card card-body">
               <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Carte</a>
-              <a href="">Réseaux sociaux et blogs</a>
+              <a class="list-group-item list-group-item-action" id="list-Rsx-list" data-bs-toggle="list" href="#list-Rsx" role="tab" aria-controls="Rsx">Réseaux sociaux et blogs</a>
               
               </div>
             </div>
           
 
-            <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Les livres Empruntés</a>
+            <a class="list-group-item list-group-item-action " id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Les livres Empruntés</a>
 
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Les livres Achetés</a>
           </div>
@@ -240,13 +242,26 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
               }
               ?>
              
-              <p class="card-text"><small class="text-muted">id abonnement [a-z][A-Z][1-9]</small></p>
+             
 
             </div>
           </div>
         </div>
     </div>
 
+      </div>
+
+      <div class="tab-pane fade" id="list-Rsx" role="tabpanel" aria-labelledby="list-Rsx-list">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-snapchat"></i>
+      </div>
+
+      <div class="tab-pane fade" id="list-declaration" role="tabpanel" aria-labelledby="list-declaration-list">
+        yoo
+      </div>
+      <div class="tab-pane fade" id="list-question" role="tabpanel" aria-labelledby="list-question-list">
+        yaaaaa
       </div>
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
       <div class="post-wrapper">
@@ -276,7 +291,7 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
         <div class="post-wrapper">
 
             <?php
-            foreach($dt as $data){
+            foreach($bghtbk as $data){
             ?>              
             <div>
               <div class="post">
@@ -303,7 +318,14 @@ $dt = $books->borrowedBooks($_SESSION['idClient']);
 
 
 
-
+<script>
+ var items = document.querySelectorAll('.list-group-item');
+  items.forEach((item) => {
+    item.addEventListener('click', function(){
+     setTimeout(function(){item.className = "list-group-item list-group-item-action"},200) 
+    });
+  });
+</script>
 <?php
   include('closenav.php');
 ?>

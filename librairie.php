@@ -35,7 +35,7 @@ $AllBooks=$books->retrieveAllBooks();
                     <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
                     <p title="description"><?=$data["description"]?></p> 
                     </div>
-                    <a href="buyabook.php?id=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Acheter</span></button></a><span class="price"><?=$data["prix"]?> €</span>
+                    <a href="buyabook.php?idachat=<?=$data["id_livres"]?>"><button class="btn btn-transparent "><span class='black'>Acheter</span></button></a><span class="price"><?=$data["prix"]?> €</span>
                 </div>
             </div>
         </div>

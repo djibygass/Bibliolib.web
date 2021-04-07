@@ -1,15 +1,24 @@
 <?php
 session_start();
-if(isset($_GET['id'])){
-   if(!isset($_GET['login'])){
+if(isset($_GET['idachat'])){
+   if(!isset($_SESSION['login'])){
       $_SESSION['tobuy'] = $_GET['id'];
       header('location:connexion.php');
    }
-   $idLivres = $_GET['id'];
+   $idLivres = $_GET['idachat'];
+   $_SESSION['idachat'] = $_GET['idachat'];
    require_once("modeles/Books.php");
    include ("./nav_bar4.php");
    $books = new Books();
    $book = $books->showABook($idLivres);
+
+   if(isset($_GET['erreur'])){
+      ?>
+      <div class="alert alert-danger" role="alert">
+      erreur, Veuillez à bien remplir tous les champs !! 
+      </div>
+      <?php
+   }
    ?>
    <div class="es-wrapper">
       <div class="es-wrapper-l">
@@ -30,10 +39,10 @@ if(isset($_GET['id'])){
       </div>
       <div class="es-wrapper-r">
          <div class='es-wrapper-r-content'>
-            <form method='POST' action = 'traitements/achat.php'>
+            <form method='POST' action = "traitements/achat.php">
 
                <div class="form-group">
-                  <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Paiement" name='paiement'>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Paiement" name='paiement'>
                </div>
                <div class="form-group">
                   <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="CVV" name='cvv'>

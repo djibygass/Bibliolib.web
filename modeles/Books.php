@@ -89,6 +89,27 @@ public function AllBooks(){
   return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// return all bought book depending of the user id
+public function boughtBooks($idUser){
+  $sql = "SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,id_livres  
+  FROM achats
+  JOIN livres USING (id_livres)
+  JOIN auteurs USING (id_auteurs)
+  JOIN categories_livres USING (id_catLivres)
+  JOIN clients USING (id_clients)
+  Where achats.id_clients = ?;";
 
+  return $this->executeRequest($sql,[$idUser])->fetchAll(PDO::FETCH_ASSOC);
+}
+
+public function buyABook(int $idUser, int $idBook){
+
+  $sql='INSERT INTO achats(id_clients,id_livres,en_magasin,statut) values (?,?,0,1)';
+  $this->executeRequest($sql,[$idUser,$idBook]);
+
+  $sql='UPDATE livres SET quantite = quantite-1 where id_livres = ?';
+  $this->executeRequest($sql,[$idBook]);
+
+}
 }
 ?>

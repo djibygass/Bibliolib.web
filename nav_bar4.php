@@ -18,14 +18,10 @@
     <ul class='nav-links'>
   
       <li>
-        <a href="ri.php" class="btn"  title="Réglement interieur">
-        <i class="fab fa-bootstrap"></i><span>ibliolib</span> 
-        </a>
+ 
       </li>
       <li>
-        <a href="traitement/deconnectadmin.php" class=""  title="deconnexion">
-        <i class="fas fa-comments"></i>
-        </a>
+       
       </li>
     </ul>
     <div class='burger'>

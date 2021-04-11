@@ -46,6 +46,11 @@
     flex-direction: row;
     justify-content:space-between;
   }
+  .alert.alert-danger{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
   
   .btn-close{
     width: 25px;

@@ -8,8 +8,12 @@ $users = new Users();
 $adresses = $users->ShowAdresses();
 $abonner = $users->checkAbonnement($_SESSION['idClient']);
 
-//var_dump($_SESSION['noconnection']);
-
+//tr
+if (isset($_SESSION['tobuy'])){
+  $tobuy=$_SESSION['tobuy'];
+  unset($_SESSION['tobuy']);
+  header("location:buyabook.php?idachat=".$tobuy);
+}
 // if he's not connect
 if(!isset($_SESSION['login'])){
   // if he's trying to borrow a book
@@ -101,7 +105,6 @@ if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
       }
 }
 
-
 if(isset($_GET['idrendre'])){
   
   $idLivres = $_GET['idrendre'];
@@ -121,9 +124,84 @@ if(isset($_GET['rendu'])){
    </div>
  <?php
 }
+//sucess achat
+if(isset($_GET['success'])){
+  ?>
+
+  <div class="alert alert-success" role="alert">
+    <div>
+      Vous avez acheté un livre.
+      <p>
+          Le livre vous sera livré dans les plus brefs délai à votre adresse sauf si vous voulez venir le récupérer en magasin.
+          <!-- Vertically centered modal -->
+        <!-- Button trigger modal -->
+        <p>
+        
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Récupérer en magasin
+            </button>
+       
+        </p>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h5 class="modal-title" id="exampleModalLabel">Bibliolib - click&collect Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            Vous voulez venir récupérer votre livre en magasin ! 
+            Cliquez sur confirmer.
+          </div>
+          <div class="modal-footer">
+            <a class ="btn btn-secondary" href="./traitements/changelivraisonachat.php?Client=<?=$_SESSION['idClient']?>&Livre=<?=$_GET['success']?>">Confirmer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      </p>
+    </div>
+    <div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+    </div>
+  </div>
+  <?php
+
+}
+if(isset($_GET['successdec'])){
+  if($_GET['successdec'] == 1){
+    ?>
+    <div class="alert alert-success" role="alert">
+     <div>
+       Votre déclaration a été envoyer avec succes ! Notre équipe reviendra vers vous d'ici quelques jours.
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successdec'] == 0){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Merci de bien remplir les champs pour la déclaration de perte !        !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+
+}
 
 $dt = $books->borrowedBooks($_SESSION['idClient']);
 $bghtbk = $books->boughtBooks($_SESSION['idClient']);
+
 ?>
 
 <div class="es-wrapper">
@@ -258,7 +336,33 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
       </div>
 
       <div class="tab-pane fade" id="list-declaration" role="tabpanel" aria-labelledby="list-declaration-list">
-        yoo
+      <form method='POST' action='./traitements/declatation.php'>
+            <div class="form-group">
+              <h4>
+                Livre perdu : 
+              </h4>
+              <select name='livre' id ='livre'>
+              <?php
+              foreach ($dt as $book){
+              ?>
+                <option value="<?=$book['id_livres']?>"><?=$book['titre']?> </option>
+              <?php 
+              }
+              ?>
+              </select>
+            </div>
+
+   
+            <div class="form-floating">
+              <textarea class="form-control" name="cause" id="floatingTextarea2" style="height: 100px" required></textarea>
+              <label for="floatingTextarea">Cause de la perte</label>
+            </div>
+              <br>
+            <div>
+            <button type="submit" class="btn btn-secondary">Déclarer</button>
+            </div>
+            <br>
+          </form>
       </div>
       <div class="tab-pane fade" id="list-question" role="tabpanel" aria-labelledby="list-question-list">
         yaaaaa

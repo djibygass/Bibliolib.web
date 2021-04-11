@@ -2,7 +2,7 @@
 session_start();
 if(isset($_GET['idachat'])){
    if(!isset($_SESSION['login'])){
-      $_SESSION['tobuy'] = $_GET['id'];
+      $_SESSION['tobuy'] = $_GET['idachat'];
       header('location:connexion.php');
    }
    $idLivres = $_GET['idachat'];
@@ -15,7 +15,7 @@ if(isset($_GET['idachat'])){
    if(isset($_GET['erreur'])){
       ?>
       <div class="alert alert-danger" role="alert">
-      erreur, Veuillez à bien remplir tous les champs !! 
+         erreur, Veuillez à bien remplir tous les champs !! 
       </div>
       <?php
    }

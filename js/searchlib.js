@@ -41,7 +41,7 @@ function viewSearchList(data){
       p.innerHTML = data[i]["description"]
 
       const a = document.createElement('a')
-      a.href = "buyabook.php?id="+ data[i]["id_livres"]
+      a.href = "buyabook.php?idachat="+ data[i]["id_livres"]
       
       const button = document.createElement('button')
       button.classList.add('transparent')
@@ -50,12 +50,13 @@ function viewSearchList(data){
       const span = document.createElement('span')
       span.classList.add('price')
       span.innerHTML = data[i]["prix"] + "€"
+      a.appendChild(button) 
 
       div2.appendChild(h5)
       div2.appendChild(p)
       div1.appendChild(div2)
+      
       div1.appendChild(a)
-      div1.appendChild(button)
       div1.appendChild(span)
       div.appendChild(img)
       div.appendChild(div1)

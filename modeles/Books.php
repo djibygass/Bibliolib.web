@@ -110,6 +110,7 @@ public function boughtBooks($idUser){
   return $this->executeRequest($sql,[$idUser])->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//buy a book
 public function buyABook(int $idUser, int $idBook){
 
   $sql='INSERT INTO achats(id_clients,id_livres,en_magasin,statut) values (?,?,0,1)';
@@ -117,7 +118,18 @@ public function buyABook(int $idUser, int $idBook){
 
   $sql='UPDATE livres SET quantite = quantite-1 where id_livres = ?';
   $this->executeRequest($sql,[$idBook]);
+}
+//return all lost book
+public function lostBooks($idUser){
+  $sql = "SELECT auteurs.nom as A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres as idCat,description,photo,id_livres  
+  FROM pertes
+  JOIN livres USING (id_livres)
+  JOIN auteurs USING (id_auteurs)
+  JOIN categories_livres USING (id_catLivres)
+  JOIN clients USING (id_clients)
+  Where pertes.id_clients = ?;";
 
+  return $this->executeRequest($sql,[$idUser])->fetchAll(PDO::FETCH_ASSOC);
 }
 }
 ?>

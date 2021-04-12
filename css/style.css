@@ -120,6 +120,9 @@
   a{
     text-decoration: none;
   }
+  li{
+    list-style: none;
+  }
   .search-panel-wrapper{
     display: flex;
     justify-content:center;
@@ -393,7 +396,6 @@
     .es-wrapper-l{
       grid-area: es-wrapper-l;
       display: grid;
-      align-content: center;
       padding-top: 15px;
       margin:1em;
       border:1px solid var(--primaryColor);

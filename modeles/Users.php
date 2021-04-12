@@ -26,12 +26,15 @@ class Users extends Modele{
     //declare a lost
     public function declare(int $idClients,int $idLivres,string $causes){
       $sql = "INSERT INTO pertes(id_clients,id_livres,causes) VALUES (?,?,?)";
-      return $this->executeRequest($sql,[$idClients, $idLivres,$causes]);
+      $this->executeRequest($sql,[$idClients, $idLivres,$causes]);
+
+      $sql = "DELETE FROM emprunter WHERE id_clients = ? AND id_livres = ?";
+      $this->executeRequest($sql,[$idClients, $idLivres]);
     }
 
   //ask a question 
    public function sendMessage(int $idClients, string $email,string $message){
-    $sql = "INSERT INTO users_questions( id_clients, email, contenu, date_time) VALUES (?,?,?,?,?,NOW())";
+    $sql = "INSERT INTO users_questions( id_clients, email, contenu, date_time) VALUES (?,?,?,NOW())";
     return $this->executeRequest($sql,[$idClients,$email,$message]);
   }
 }

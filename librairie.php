@@ -5,7 +5,6 @@ require_once("modeles/Books.php");
 $books = new Books();
 $AllBooks=$books->retrieveAllBooks();
 
-
 ?>
 
 <div class="search-panel-wrapper">

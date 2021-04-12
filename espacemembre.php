@@ -171,6 +171,7 @@ if(isset($_GET['success'])){
   <?php
 
 }
+//succes/echec de déclaration
 if(isset($_GET['successdec'])){
   if($_GET['successdec'] == 1){
     ?>
@@ -199,8 +200,53 @@ if(isset($_GET['successdec'])){
 
 }
 
+//succes/echec d'envoie de message (question)
+if(isset($_GET['successmsg'])){
+  if($_GET['successmsg'] == 1){
+    ?>
+    <div class="alert alert-success" role="alert">
+     <div>
+       Votre message a bien été envoyer. Vous recevrez une réponse d'ici peu sur mail.
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successmsg'] == 0){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Adresse email invalide !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successmsg'] == 2){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Merci de remplir tous les champs !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+
+}
+
+
+
+
 $dt = $books->borrowedBooks($_SESSION['idClient']);
 $bghtbk = $books->boughtBooks($_SESSION['idClient']);
+$lstbk = $books->lostBooks($_SESSION['idClient']);
 
 ?>
 
@@ -217,11 +263,12 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
           <div class="collapse" id="collapseExample1">
             <div class="card card-body">
 
+              <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#horaires" role="tab" aria-controls="home">Les horaires d'ouverture</a> 
+
                <a class="list-group-item list-group-item action" id="list-bib-list" data-bs-toggle="list" href="#list-bib" role="tab" aria-controls="bib">La liste des bibliothèques</a> 
           
-               <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#horaires" role="tab" aria-controls="home">Les horaires d'ouverture</a> 
-              <a href=""></a>
-              <a href=""></a>
+              
+              
             </div>
           </div>
 
@@ -234,8 +281,7 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
             <div class="card card-body">
                <a class="list-group-item list-group-item-action" id="list-declaration-list" data-bs-toggle="list" href="#list-declaration" role="tab" aria-controls="declaration">Déclarer une Perte</a> 
                <a class="list-group-item list-group-item-action" id="list-question -list" data-bs-toggle="list" href="#list-question" role="tab" aria-controls="question">Poser des Questions</a> 
-              <a href=""></a>
-              <a href=""></a>
+              
             </div>
           </div>
 
@@ -257,6 +303,8 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
             <a class="list-group-item list-group-item-action " id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Les livres Empruntés</a>
 
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Les livres Achetés</a>
+
+            <a class="list-group-item list-group-item-action" id="list-perdu-list" data-bs-toggle="list" href="#list-perdu" role="tab" aria-controls="perdu">Les Livres Perdus</a>
           </div>
         </div>
 
@@ -268,6 +316,9 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
       <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
        <h3>bienvenue dans votre espace membre<h3>
       </div>
+
+
+<!--  INFOS PRATIQUES/ADRESSES -->
 
       <div class="tab-pane fade" id="list-bib" role="tabpanel" aria-labelledby="list-bib-list">
         <div>
@@ -282,6 +333,8 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
           ?>
         </div>
       </div>
+<!--  INFOS PRATIQUES/HORAIRES -->
+
       <div class="tab-pane fade" id="horaires" role="tabpanel" aria-labelledby="list-bib-list">
         <div>
           <h4 class = "horaire">Les horaires d'ouverture</h4><br>
@@ -297,6 +350,7 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
           </div>
         </div>
       </div>
+<!-- NOS SERVICES / CARTE -->
 
       <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
 
@@ -328,13 +382,13 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
     </div>
 
       </div>
-
+<!-- NOS SERVICES / RESEAUX ET BLOG -->
       <div class="tab-pane fade" id="list-Rsx" role="tabpanel" aria-labelledby="list-Rsx-list">
         <i class="fab fa-instagram"></i>
         <i class="fab fa-twitter"></i>
         <i class="fab fa-snapchat"></i>
       </div>
-
+<!-- FAQ / DECLARE PERTE -->
       <div class="tab-pane fade" id="list-declaration" role="tabpanel" aria-labelledby="list-declaration-list">
       <form method='POST' action='./traitements/declatation.php'>
             <div class="form-group">
@@ -364,9 +418,24 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
             <br>
           </form>
       </div>
+      <!-- FAQ / POSER QUESTION -->
       <div class="tab-pane fade" id="list-question" role="tabpanel" aria-labelledby="list-question-list">
-        yaaaaa
+      <form  method='POST' action='./traitements/sending_users_quetion.php'>
+          *Vous recevrez une réponse à votre question sur cette adresse e-mail !
+          <div class="form-group">
+            <input type="text" class="form-control"  placeholder="Email" name='email'  >
+          </div>
+          
+          <div class="form-group">
+           <textarea class="form-control" placeholder="Question" rows="4" name="message" required></textarea>
+          </div>
+          <div>
+          <button type="submit" class="btn btn-secondary">Envoyer</button>
+          </div>
+        </form>
       </div>
+
+<!-- LIVRES EMPRUNTES -->
       <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
       <div class="post-wrapper">
 
@@ -391,6 +460,8 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
         ?>
       </div>
     </div>
+    <!-- LIVRES ACHETES -->
+
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
         <div class="post-wrapper">
 
@@ -414,6 +485,34 @@ $bghtbk = $books->boughtBooks($_SESSION['idClient']);
           </div>
       
       </div>
+    <!-- LIVRES PERDUS -->
+
+    <div class="tab-pane fade" id="list-perdu" role="tabpanel" aria-labelledby="list-perdu-list">
+        <div class="post-wrapper">
+
+            <?php
+            foreach($lstbk as $data){
+            ?>              
+            <div>
+              <div class="post">
+                <img class="thumbnail" src="img/<?=$data["photo"]?>" alt="">
+                <div class="post-preview">
+                  <div class="desc" >
+                    <h5 class="post-tittle" title="titre du livre"><?=$data["titre"]?></h5>
+                    <p title="description"><?=$data["description"]?></p> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php
+            }
+            ?>
+          </div>
+      
+      </div>
+
+
+
     </div>
   </div>
 </div>

@@ -1,8 +1,12 @@
 <?php
   include('nav_bar.php');
   require_once "./modeles/Posts.php";
+  require_once "./modeles/Users.php";
+  
   $post = new Posts();
+  $users =new Users();
   $posts = $post->showAllPost();
+  $adresses = $users->ShowAdresses();
 ?>
 <div class="main-container flex">
   <div class='hour'> </div>
@@ -48,8 +52,13 @@
   </div>
   <div class="r-column">
     <h4 class='column-title '>Nos Adresses</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa libero placeat eum repellat. Doloremque debitis fugiat cumque nam, soluta, suscipit aut maiores dicta nihil consequatur repudiandae repellat. Nulla, quis.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa libero placeat eum repellat. Doloremque debitis fugiat cumque nam, soluta, suscipit aut maiores dicta nihil consequatur repudiandae repellat. Nulla, quis.</p> 
+    <p> <?php
+          foreach($adresses as $adress){
+            ?>
+        <li class = "list-adresses"><?=$adress['numero'].' '.$adress['rue'].' '.$adress['ville'].' '.$adress['codepostal']?></li>
+        <?php
+          }
+          ?></p> 
   </div>
 </div>
 

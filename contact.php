@@ -13,7 +13,7 @@ include 'nav_bar.php';
            if (isset($_GET['ERREUR'])){
           ?>
              <div class="alert alert-danger" role="alert">
-               Merci de Compléter tous les champs !!!
+               Merci de compléter correctement tous les champs !
              </div>
              <?php
                }

@@ -47,12 +47,13 @@ function viewSearchList(data){
       button.classList.add('transparent')
       
       button.innerHTML = "<span class='black'>Emprunter</span>"
+      a.appendChild(button) 
       
       div2.appendChild(h5)
       div2.appendChild(p)
       div1.appendChild(div2)
       div1.appendChild(a)
-      div1.appendChild(button)
+     
       div.appendChild(img)
       div.appendChild(div1)
       postWrapper.style.display = "grid"

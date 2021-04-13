@@ -9,7 +9,6 @@ if(isset($_POST['email']) && !empty($_POST['email']) &&
       if(filter_var($email,FILTER_VALIDATE_EMAIL)){
          $user->sendMessage($_SESSION['idClient'],$email,$message);
          header('location:../espacemembre.php?successmsg=1');
-
       }else{
          header('location:../espacemembre.php?successmsg=0');
       }

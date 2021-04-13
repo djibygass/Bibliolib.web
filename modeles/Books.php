@@ -46,14 +46,14 @@ class Books extends Modele{
   //this function is in charge of update the deliver plan when the user want to do clickcollect
   //on borrowed book
   public function update(int $idUser, int $idBook){  
-    $sql='UPDATE emprunter SET en_magasin = 1 WHERE id_clients = ? AND id_livres = ?';
+    $sql='UPDATE emprunter SET en_magasin = 1, statut = 0 WHERE id_clients = ? AND id_livres = ?';
     $this->executeRequest($sql,[$idUser,$idBook]);
 
   }
    //this function is in charge of update the deliver plan when the user want to do clickcollect
    //on bought book
    public function updateachat(int $idUser, int $idBook){  
-    $sql='UPDATE achats SET en_magasin = 1 WHERE id_clients = ? AND id_livres = ?';
+    $sql='UPDATE achats SET en_magasin = 1, statut = 0 WHERE id_clients = ? AND id_livres = ?';
     $this->executeRequest($sql,[$idUser,$idBook]);
 
   }
@@ -113,7 +113,7 @@ public function boughtBooks($idUser){
 //buy a book
 public function buyABook(int $idUser, int $idBook){
 
-  $sql='INSERT INTO achats(id_clients,id_livres,en_magasin,statut) values (?,?,0,1)';
+  $sql='INSERT INTO achats(id_clients,id_livres,en_magasin,statut) values (?,?,0,0)';
   $this->executeRequest($sql,[$idUser,$idBook]);
 
   $sql='UPDATE livres SET quantite = quantite-1 where id_livres = ?';

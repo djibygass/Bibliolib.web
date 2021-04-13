@@ -6,9 +6,8 @@ require_once "./modeles/Users.php";
 $books = new Books();
 $users = new Users();
 $adresses = $users->ShowAdresses();
-$abonner = $users->checkAbonnement($_SESSION['idClient']);
 
-//tr
+//was trying to buy a book being not connected.
 if (isset($_SESSION['tobuy'])){
   $tobuy=$_SESSION['tobuy'];
   unset($_SESSION['tobuy']);
@@ -24,6 +23,8 @@ if(!isset($_SESSION['login'])){
   }
   header('location:connexion.php');
 }
+$abonner = $users->checkAbonnement($_SESSION['idClient']);
+
 //borrowing
 if(isset($_GET['idemprunt']) || isset($_SESSION['noconnection'])){
       $idClients = $_SESSION['idClient'];
@@ -197,6 +198,18 @@ if(isset($_GET['successdec'])){
    </div>
     <?php
   }
+  elseif($_GET['successdec'] == 2){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Il faut emprunter un livre pour en perdre. 
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
 
 }
 
@@ -206,7 +219,7 @@ if(isset($_GET['successmsg'])){
     ?>
     <div class="alert alert-success" role="alert">
      <div>
-       Votre message a bien été envoyer. Vous recevrez une réponse d'ici peu sur mail.
+       Votre message a bien été envoyer. Vous recevrez une réponse d'ici peu.
      </div>
      <div>
      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
@@ -241,12 +254,64 @@ if(isset($_GET['successmsg'])){
 
 }
 
+$answers = $users->answers($_SESSION['idClient']);
+
+
+  foreach($answers as $answer){
+    if($answer['reponse'] != " "){
+      ?>
+    <div class="alert alert-success" role="alert">
+    <div>
+      Vous avez reçu une réponse à votre question !
+      <p>
+          <?=$answer['reponse']?>
+          <!-- Vertically centered modal -->
+        <!-- Button trigger modal -->
+        <p>
+        
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              OK, j'ai lu
+            </button>
+       
+        </p>
+    <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+
+              <h5 class="modal-title" id="exampleModalLabel">Lecture Confirmation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+              Vous avez déja lu la réponse ! 
+              Cliquez sur confirmer.
+            </div>
+            <div class="modal-footer">
+              <a class ="btn btn-secondary" href="./traitements/lu.php?Client=<?=$_SESSION['idClient']?>">Confirmer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </p>
+    </div>
+    <div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+    </div>
+  </div>
+      
+      <?php
+      }
+  }
 
 
 
 $dt = $books->borrowedBooks($_SESSION['idClient']);
 $bghtbk = $books->boughtBooks($_SESSION['idClient']);
 $lstbk = $books->lostBooks($_SESSION['idClient']);
+
+
 
 ?>
 
@@ -421,7 +486,7 @@ $lstbk = $books->lostBooks($_SESSION['idClient']);
       <!-- FAQ / POSER QUESTION -->
       <div class="tab-pane fade" id="list-question" role="tabpanel" aria-labelledby="list-question-list">
       <form  method='POST' action='./traitements/sending_users_quetion.php'>
-          *Vous recevrez une réponse à votre question sur cette adresse e-mail !
+          *Vous recevrez peut-être une réponse à votre question sur cette adresse e-mail ou dans votre espace Bibliolib !
           <div class="form-group">
             <input type="text" class="form-control"  placeholder="Email" name='email'  >
           </div>

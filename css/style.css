@@ -476,6 +476,20 @@
   .block_inscription{
     display: none;
   }
+  .commandes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #acabbf;
+    border-bottom:0.1px solid black;
+    padding: 1em;
+  }
+  .commandes:hover{
+    background-color:#fff;
+  }
+  .Mcolor{
+    color: var(--Mcolor);
+  }
   /* espaceadmin */
 
 

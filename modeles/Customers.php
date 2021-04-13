@@ -15,7 +15,7 @@ Class Customers extends Modele{
   }
   //contact form -> support
   public function sendMessage(string $firstname, string $lastname, string $email,string $subject, string $message ){
-    $sql = "INSERT INTO custumers_questions(prenom, nom, email, sujet, contenu, date_time) VALUES (?,?,?,?,?,NOW())";
+    $sql = "INSERT INTO customers_questions(prenom, nom, email, sujet, contenu, date_time) VALUES (?,?,?,?,?,NOW())";
     return $this->executeRequest($sql,[$firstname,$lastname,$email,$subject,$message]);
   }
  

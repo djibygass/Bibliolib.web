@@ -16,7 +16,7 @@ if ($res){
       <br>
       <br>
       <div>
-         <button class="btn btn-transparent " onclick="confirm()"><span>me désabonner</span></button>
+         <a href="./traitements/desabonnement.php"><button class="btn btn-transparent"><span>me désabonner</span></button></a>
       </div>
    </div>
 <?php
@@ -56,15 +56,7 @@ if ($res){
 <?php
 }
 ?>
-<script>
-   function confirm(){
-                if (confirm("Press a button!")) {
-                    txt = "You pressed OK!";
-                } else {
-                    txt = "You pressed Cancel!";
-                }
-   }
-</script>
+
 <?php
 include('closenav.php');
 ?>

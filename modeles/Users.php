@@ -18,6 +18,11 @@ class Users extends Modele{
       $sql = "INSERT INTO abonnements(id_clients,iban,bic,statut,date_debut) VALUES (?,?,?,'1',NOW())";
       return $this->executeRequest($sql,[$id,$iban,$bic]);
     }
+     //User's unsubscribtion 
+     public function unsubscribtion(int $id){
+      $sql = "DELETE FROM abonnements where id_clients = ?";
+      return $this->executeRequest($sql,[$id]);
+    }
     //show all adresses
     public function showAdresses(){
       $sql = "SELECT * FROM adresses";
@@ -34,8 +39,18 @@ class Users extends Modele{
 
   //ask a question 
    public function sendMessage(int $idClients, string $email,string $message){
-    $sql = "INSERT INTO users_questions( id_clients, email, contenu, date_time) VALUES (?,?,?,NOW())";
+    $sql = "INSERT INTO users_questions(id_clients, email, contenu, date_time,statut, reponse, lu) VALUES (?,?,?,NOW(),'0',' ', '0')";
     return $this->executeRequest($sql,[$idClients,$email,$message]);
   }
+  //received an answer
+  public function answers(int $idClients){
+    $sql = "SELECT reponse FROM users_questions where id_clients = ? and lu ='0' ";
+    return $this->executeRequest($sql,[$idClients])->fetchAll();
+  }
+    //read the message
+    public function read(int $idClients){
+      $sql = "UPDATE users_questions SET lu = '1' where id_clients = ? ";
+      return $this->executeRequest($sql,[$idClients]);
+    }
 }
 ?>

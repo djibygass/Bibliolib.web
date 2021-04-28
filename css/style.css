@@ -494,6 +494,11 @@
 
 
    /*inbox.php*/
+   .text-small{
+     background-color: #4b5156;
+     border-radius: 30px;
+     padding-left: 20px;
+   }
   .box-container{
     height: 100%;
     width: 100%;
@@ -537,6 +542,14 @@
   }
   .card-body{
     min-height: 500px;
+    max-height: 500px;
+    overflow-x: scroll;
+   
+  }
+  .nomAdmin{
+    color: lightgoldenrodyellow;
+    font-size: 20px;
+    text-align: center;
   }
   /*inbox.php*/
 

@@ -1,3 +1,10 @@
+<?php
+if(!$_SESSION['LoginAdmin']){
+  header('location:admin.php');
+}
+require_once "./modeles/Admins.php";
+$admin = new Admins();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,7 +25,7 @@
     <ul class='nav-links'>
     <li>
         <a href="inbox.php" class=""  title="ChatBox">
-        <i class="fas fa-comments"></i>
+        <i class="fas fa-comments"></i><span class="badge bg-secondary"><?=$admin->countUnreadMessages($_SESSION['idadmin'])[0]?></span>
         </a>
       </li>
     <li>

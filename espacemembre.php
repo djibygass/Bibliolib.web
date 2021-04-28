@@ -455,7 +455,7 @@ $lstbk = $books->lostBooks($_SESSION['idClient']);
       </div>
 <!-- FAQ / DECLARE PERTE -->
       <div class="tab-pane fade" id="list-declaration" role="tabpanel" aria-labelledby="list-declaration-list">
-      <form method='POST' action='./traitements/declatation.php'>
+      <form method='POST' action='./traitements/declaration.php'>
             <div class="form-group">
               <h4>
                 Livre perdu : 

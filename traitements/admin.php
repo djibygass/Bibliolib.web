@@ -12,6 +12,7 @@ if (isset($_POST['motdepasse']) && !empty($_POST['motdepasse']) && isset($_POST[
 
       if(password_verify($password, $data['password'])){
         $_SESSION["LoginAdmin"] = $login;
+        $_SESSION['idadmin'] = $data['id'];
         header('location:../espaceadmin.php');
       }
       else{

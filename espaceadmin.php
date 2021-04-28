@@ -186,7 +186,7 @@ if(isset($_GET['successrsp'])){
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <span class="Mcolor">Collect et emprunt</span>
+        <span class="Mcolor">Collect et emprunt <span class="badge bg-secondary"><?=$admin->counttobecollected()[0]?></span></span>
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -215,7 +215,7 @@ if(isset($_GET['successrsp'])){
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        <span class="Mcolor">Collect et achat</span>
+        <span class="Mcolor">Collect et achat <span class="badge bg-secondary"><?=$admin->countbbtobecollected()[0]?></span></span>
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -264,7 +264,7 @@ if(isset($_GET['successrsp'])){
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingFive">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          <span class="Mcolor">Questions USERS</span>
+          <span class="Mcolor">Questions USERS <span class="badge bg-secondary"><?=$admin->countQuestions()[0]?></span></span>
         </button>
       </h2>
       <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
@@ -308,7 +308,7 @@ if(isset($_GET['successrsp'])){
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingSix">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-          <span class="Mcolor">Contact support</span>
+          <span class="Mcolor">Contact support <span class="badge bg-secondary"><?=$admin->countmailsSupport()[0]?></span></span>
         </button>
       </h2>
       <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
@@ -335,7 +335,7 @@ if(isset($_GET['successrsp'])){
                   </div>
                   
                   <div>
-                    <a href="./traitements/delmailateranswer.php?idmail=<?=$mailsSupport['id']?>">
+                    <a href="./traitements/delmailafteranswer.php?idmail=<?=$mailsSupport['id']?>">
                     <button type="submit" class="btn btn-secondary">effacer</button></a>
                   </div>
                       

@@ -8,7 +8,8 @@ class Books extends Modele{
     $sql="SELECT auteurs.nom AS A_nom,categories_livres.nom AS C_nom,titre,categories_livres.id_catLivres AS idCat,description,photo,quantite,id_livres,prix  
     FROM livres
     JOIN auteurs USING (id_auteurs)
-    JOIN categories_livres USING (id_catLivres);";
+    JOIN categories_livres USING (id_catLivres)
+    Where stat_livre  = '1';";
     return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -131,5 +132,41 @@ public function lostBooks($idUser){
 
   return $this->executeRequest($sql,[$idUser])->fetchAll(PDO::FETCH_ASSOC);
 }
+//check that th author do not already exist 
+public function checkthisauth(string $author){
+  $sql = "SELECT nom FROM auteurs WHERE nom = ?";
+  return $this->executeRequest($sql,[$author])->fetch();
+}
+//check that th author do not already exist 
+public function checkthiscat(string $categorie){
+  $sql = "SELECT nom FROM categories_livres WHERE nom = ?";
+  return $this->executeRequest($sql,[$categorie])->fetch();
+}
+//insert new author
+public function addAuthor(string $nom){
+  $sql = "INSERT INTO auteurs(nom) VALUES (?)";
+  $this->executeRequest($sql,[$nom]);
+}
+//insert new categorie
+public function addCat(string $nom){
+  $sql = "INSERT INTO categories_livres(nom) VALUES (?)";
+  $this->executeRequest($sql,[$nom]);
+}
+//show All categories
+public function showCat(){
+  $sql = "SELECT * FROM categories_livres";
+  return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
+//show All authors
+public function showAuthors(){
+  $sql = "SELECT * FROM auteurs";
+  return $this->executeRequest($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
+//Add a new book
+public function addNewBook(string $title, string $description, int $price, int $idauth, int $idcat, string $photo){
+  $sql = "INSERT INTO livres(titre,description,prix,quantite,id_auteurs,id_catLivres, photo, stat_livre) VALUES (?,?,?,0,?,?,?,0)";
+  $this->executeRequest($sql, [$title,$description,$price,$idauth,$idcat,$photo]);
+}
+
 }
 ?>

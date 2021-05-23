@@ -16,6 +16,11 @@
     <a class="navbar-brand" href="index.php"><img class="logonav" src="./img/logo.png" alt="logo"></a>
 
     <ul class='nav-links'>
+      <li>
+        <a href="annonces.php" class="">
+            <span>Annonces</span>
+        </a>
+      </li>
     <li>
         <a href="contact.php" class="">      
             <span>Contact</span>

@@ -13,6 +13,9 @@ $collects = $admin->tobecollected();
 $collectsAchats = $admin->bbtobecollected();
 $questions = $admin->Questions();
 $mailsSupports = $admin->mailsSupport();
+$categories = $Books->showCat();
+$auteurs = $Books->showAuthors();
+
 //succes/echec de la vente
 if(isset($_GET['successvente'])){
   if($_GET['successvente'] == 1){
@@ -135,6 +138,149 @@ if(isset($_GET['successrsp'])){
     <?php
   }
 }
+
+//echec/success ajout auteur
+if(isset($_GET['successaddauthor'])){
+  if($_GET['successaddauthor'] == 0){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       L'auteur que vous essayez d'ajouter existe déja.
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddauthor'] == 1){
+    ?>
+    <div class="alert alert-success" role="alert">
+     <div>
+       Auteur ajouter avec succes !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddauthor'] == 2){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Veuillez à bien remplir tous les champs !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+}
+
+//success/echec ajout categorie
+if(isset($_GET['successaddcat'])){
+  if($_GET['successaddcat'] == 0){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       La catégorie que vous essayez d'ajouter existe déja.
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddcat'] == 1){
+    ?>
+    <div class="alert alert-success" role="alert">
+     <div>
+        Catégorie avec succes !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddcat'] == 2){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Veuillez à bien remplir tous les champs !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+}
+if(isset($_GET['successaddbook'])){
+  if($_GET['successaddbook'] == 0){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Votre image doit être de format(JPG, JPEG, PNG ou GIF)
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddbook'] == 1){
+    ?>
+    <div class="alert alert-success" role="alert">
+     <div>
+       Votre demande a bien été envoyer.
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddbook'] == 2){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       la taille de votre image est trop grande !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddbook'] == 3){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+       Votre image contient des erreurs !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+  elseif($_GET['successaddbook'] == 4){
+    ?>
+    <div class="alert alert-danger" role="alert">
+     <div>
+      Veuillez à bien remplir tous les champs !
+     </div>
+     <div>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>  
+     </div>
+   </div>
+    <?php
+  }
+}
+
 
 ?>
 
@@ -350,6 +496,107 @@ if(isset($_GET['successrsp'])){
         </div>
       </div>
     </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingseven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+          <span class="Mcolor">Ajout d'auteur ou de catégorie </span>
+        </button>
+      </h2>
+      <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <form action="traitements/ajoutauteur.php" method="post">
+          <h5 class="Mcolor">Ajouter un auteur</h5>
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Nom de l'auteur" name='nom' required>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+
+          <form action="traitements/ajoutcategorie.php" method="post">
+          <h5 class="Mcolor">Ajouter une catégorie</h5>
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Nom de catégorie" name='nom_cat' required>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingeight">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+          <span class="Mcolor">Demande d'ajout de livre </span>
+        </button>
+      </h2>
+      <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <form action="traitements/ajoutlivre.php" method="post" enctype="multipart/form-data">
+          
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Titre du livre" name='titre' required>
+
+              </div>
+              <div class="form-group">
+              <textarea class="form-control" placeholder="Description" rows="4" name="description" required></textarea>
+              </div>
+
+              <input type="number" class="form-control"  placeholder="prix" name='prix' required>
+
+              </div>
+              <div class="form-group">
+              
+              <span class="Mcolor">Catégorie :</span>
+              <select name="idcat" id="">
+                <?php
+                foreach ($categories as $categorie){
+                  ?>
+                    <option value="<?=$categorie['id_catLivres']?>"><?=$categorie['nom']?></option>
+                  <?php
+                }
+                ?>
+              </select>
+
+              </div>
+              <div class="form-group">
+              
+              <span class="Mcolor">Auteur :</span>
+              <select name="idauth" id="">
+                <?php
+                foreach ($auteurs as $auteur){
+                  ?>
+                    <option value="<?=$auteur['id_auteurs']?>"><?=$auteur['nom']?></option>
+                  <?php
+                }
+                ?>
+              </select>
+
+            </div>
+            <div class="form-group">
+                <input type="file" name="photo" accept="image/x-png,image/gif,image/jpeg">
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-transparent">Valider</button>
+            </div>
+            <br>
+          </form>
+
+      
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 

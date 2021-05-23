@@ -141,6 +141,11 @@ class Admins extends Modele{
     $sql = "UPDATE chatbox SET lu = '1' where id_recipient = ? and id_sender = ? and  content = ? ";
     return $this->executeRequest($sql,[$idrecipient,$id_sender,$contenu]);
   }
+  //show announcement
+  public function ShowAllAnnouncement(){
+    $sql = "SELECT * FROM annonces GROUP BY date_time DESC";
+    return $this->executeRequest($sql);
+  }
 }
 
 ?>

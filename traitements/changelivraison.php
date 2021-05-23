@@ -6,4 +6,5 @@ $idClients = $_GET["Client"];
 $idLivres = $_GET["Livre"];
 $books->update($idClients,$idLivres);
 header('location:../espacemembre.php');
+
 ?>
